@@ -3,7 +3,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
-const APP_URL = "https://app.parametrics.app";
+const APP_URL = "https://beta.parametrics.app";
 
 const questions = [
   { q: "Was that thermal actually good?", icon: "🌀" },

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     "Join the Parametrics beta for free, or subscribe to unlock the full feature set. Instant access via Google sign-in.",
 };
 
-const APP_URL = "https://app.parametrics.app";
+const APP_URL = "https://beta.parametrics.app";
 
 export default function PricingPage() {
   return (
@@ -126,7 +126,7 @@ export default function PricingPage() {
                         rel="noopener noreferrer"
                         style={{ color: "#03a9f4", textDecoration: "none" }}
                       >
-                        app.parametrics.app
+                        beta.parametrics.app
                       </a>{" "}
                       and sign in with the <strong>same email</strong> you used to register or pay.
                     </>
@@ -223,10 +223,18 @@ export default function PricingPage() {
                   margin: 0,
                 }}
               >
-                <strong style={{ color: "rgba(226,232,240,0.9)" }}>Email matching is required.</strong>{" "}
-                The Google account you use to sign in must have the same email address
-                as the one you registered or paid with. There is no password — only
-                Google sign-in is supported.
+                <strong style={{ color: "rgba(226,232,240,0.9)" }}>🔐 Google sign-in required.</strong>{" "}
+                Sign in at{" "}
+                <a
+                  href="https://beta.parametrics.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ color: "#03a9f4", textDecoration: "none" }}
+                >
+                  beta.parametrics.app
+                </a>{" "}
+                using the Google account that matches the email you registered or paid with.
+                No password login — Google only.
               </p>
             </div>
           </div>

@@ -4,10 +4,9 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import Link from "next/link";
 
-// ─── Paystack link stubs ─────────────────────────────────────────────────────
-// Replace these with real Paystack payment page URLs when ready.
-const PAYSTACK_MONTHLY_URL = "#subscribe-monthly";
-const PAYSTACK_ANNUAL_URL = "#subscribe-annual";
+// ─── Paystack checkout links ──────────────────────────────────────────────────
+const PAYSTACK_MONTHLY_URL = "https://paystack.shop/pay/parametrics-monthly";
+const PAYSTACK_ANNUAL_URL = "https://paystack.shop/pay/parametrics-annual";
 
 // ─── Plans ───────────────────────────────────────────────────────────────────
 
@@ -54,9 +53,9 @@ const plans = [
   {
     id: "annual",
     name: "Annual",
-    price: "$8",
-    period: "/ month",
-    note: "Billed annually — save 33%",
+    price: "$96",
+    period: "/ year",
+    note: "$8 / month — save 33% vs monthly",
     features: [
       "Everything in Monthly",
       "Early access to new features",
@@ -383,17 +382,17 @@ export default function PricingSection({ preview = false }: { preview?: boolean 
               margin: 0,
             }}
           >
-            <strong style={{ color: "rgba(226,232,240,0.9)" }}>Sign-in reminder:</strong> After
-            joining beta or subscribing, you access the app at{" "}
+            <strong style={{ color: "rgba(226,232,240,0.9)" }}>🔐 Google sign-in required.</strong> After
+            joining beta or subscribing, sign in at{" "}
             <a
-              href="https://app.parametrics.app"
+              href="https://beta.parametrics.app"
               target="_blank"
               rel="noopener noreferrer"
               style={{ color: "#03a9f4", textDecoration: "none" }}
             >
-              app.parametrics.app
+              beta.parametrics.app
             </a>{" "}
-            using <strong style={{ color: "#03a9f4" }}>Google sign-in</strong>. The Google
+            using <strong style={{ color: "#03a9f4" }}>Sign in with Google</strong>. The Google
             account email must match the email you used to register or pay.
           </p>
         </motion.div>

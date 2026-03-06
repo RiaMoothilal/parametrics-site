@@ -6,7 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const BETA_API = "https://beta.parametrics.app/beta/signup";
-const APP_URL = "https://app.parametrics.app";
+const APP_URL = "https://beta.parametrics.app";
 
 export default function BetaPage() {
   const router = useRouter();
@@ -317,8 +317,8 @@ export default function BetaPage() {
                   margin: 0,
                 }}
               >
-                <strong style={{ color: "rgba(226,232,240,0.88)" }}>Important:</strong> You must sign in to the app with the{" "}
-                <strong style={{ color: "#03a9f4" }}>same Google account</strong> that matches this email address.
+                <strong style={{ color: "rgba(226,232,240,0.88)" }}>🔐 Google sign-in required.</strong> You must sign in to the app using the{" "}
+                <strong style={{ color: "#03a9f4" }}>same Google account</strong> as the email you enter above. No password — Google only.
               </p>
             </div>
           </div>

@@ -6,7 +6,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const APP_URL = "https://app.parametrics.app";
+const APP_URL = "https://beta.parametrics.app";
 
 function PaymentSuccessContent() {
   const params = useSearchParams();
@@ -151,7 +151,7 @@ function PaymentSuccessContent() {
                     rel="noopener noreferrer"
                     style={{ color: "#03a9f4", textDecoration: "none" }}
                   >
-                    app.parametrics.app
+                    beta.parametrics.app
                   </a>{" "}
                   and click <strong style={{ color: "rgba(226,232,240,0.85)" }}>Sign in with Google</strong>.
                 </>
@@ -160,12 +160,13 @@ function PaymentSuccessContent() {
             },
             {
               step: "2",
-              title: "Use your payment email",
+              title: "🔐 Use the matching Google account",
               body: (
                 <>
                   Select the Google account for{" "}
                   <strong style={{ color: "#a855f7" }}>{email}</strong>. This must
-                  match your payment email exactly.
+                  match your payment email exactly — a different address will be denied.
+                  No password login is supported.
                 </>
               ),
               color: "#a855f7",
@@ -298,10 +299,7 @@ function PaymentSuccessContent() {
             (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 0 28px rgba(3,169,244,0.35)";
           }}
         >
-          Open the App
-          <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
-            <path d="M3 8h10M9 4l4 4-4 4" stroke="#fff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
+          Continue to App →
         </a>
 
         <p style={{ marginTop: "1.25rem", color: "rgba(226,232,240,0.35)", fontSize: "0.8rem" }}>
