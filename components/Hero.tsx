@@ -223,7 +223,7 @@ function FlightMapSVG() {
         <circle cx="265" cy="120" r="5.5" fill="none" stroke="#94a3b8" strokeWidth="0.8" opacity="0.35" />
 
         {/* Map label */}
-        <text x="6" y="10" fontSize="5.5" fill="rgba(226,232,240,0.28)" fontFamily="system-ui" textTransform="uppercase" letterSpacing="0.5">
+        <text x="6" y="10" fontSize="5.5" fill="rgba(226,232,240,0.28)" fontFamily="system-ui" style={{ textTransform: "uppercase", letterSpacing: "0.5px" }}>
           FLIGHT TRACK · ALPINE XC
         </text>
 
