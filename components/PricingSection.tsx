@@ -1,55 +1,86 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
-import { useRef, useState } from "react";
+import { useRef } from "react";
+import Link from "next/link";
 
-const APP_URL = "https://app.parametrics.app";
+// ─── Paystack link stubs ─────────────────────────────────────────────────────
+// Replace these with real Paystack payment page URLs when ready.
+const PAYSTACK_MONTHLY_URL = "#subscribe-monthly";
+const PAYSTACK_ANNUAL_URL = "#subscribe-annual";
+
+// ─── Plans ───────────────────────────────────────────────────────────────────
 
 const plans = [
   {
+    id: "beta",
+    name: "Beta",
+    price: "Free",
+    period: "",
+    note: "During beta period",
+    features: [
+      "Thermal analysis",
+      "Glide efficiency",
+      "Missed thermal detection",
+      "Risk metrics",
+      "Coaching summary",
+      "IGC file upload",
+    ],
+    cta: "Join Beta — Free",
+    href: "/beta",
+    external: false,
+    highlighted: false,
+    accent: "#10b981",
+  },
+  {
+    id: "monthly",
     name: "Monthly",
     price: "$12",
     period: "/ month",
-    annualNote: null,
+    note: null,
     features: [
-      "Unlimited IGC uploads",
-      "Thermal analysis",
-      "Glide efficiency reports",
-      "Missed thermal detection",
-      "Risk metrics",
-      "Coaching summaries",
-      "7-day free trial",
+      "Everything in Beta",
+      "Batch pilot comparison",
+      "Flight history archive",
+      "Export reports as PDF",
+      "Priority support",
     ],
-    cta: "Start Free Trial",
+    cta: "Subscribe Monthly",
+    href: PAYSTACK_MONTHLY_URL,
+    external: true,
     highlighted: false,
+    accent: "#03a9f4",
   },
   {
+    id: "annual",
     name: "Annual",
     price: "$8",
     period: "/ month",
-    annualNote: "Billed annually — save 33%",
+    note: "Billed annually — save 33%",
     features: [
       "Everything in Monthly",
-      "Batch pilot comparison",
-      "Priority support",
       "Early access to new features",
+      "Batch pilot comparison",
       "Flight history archive",
       "Export reports as PDF",
-      "7-day free trial",
+      "Priority support",
     ],
-    cta: "Start Free Trial",
+    cta: "Subscribe Annually",
+    href: PAYSTACK_ANNUAL_URL,
+    external: true,
     highlighted: true,
+    accent: "#03a9f4",
   },
 ];
 
-function Check() {
+function Check({ color }: { color: string }) {
   return (
     <svg
-      width="16"
-      height="16"
+      width="15"
+      height="15"
       viewBox="0 0 24 24"
       fill="none"
-      stroke="#03a9f4"
+      stroke={color}
       strokeWidth="2.5"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -119,31 +150,32 @@ export default function PricingSection({ preview = false }: { preview?: boolean 
             marginBottom: "3.5rem",
           }}
         >
-          Try Parametrics free for 7 days. No credit card required.
+          Join the free beta, or subscribe for the full feature set.
         </motion.p>
 
+        {/* Plan cards */}
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
             gap: "1.25rem",
-            maxWidth: "700px",
+            maxWidth: "920px",
             margin: "0 auto",
           }}
         >
           {plans.map((plan, i) => (
             <motion.div
-              key={plan.name}
+              key={plan.id}
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.15 * i + 0.2 }}
+              transition={{ duration: 0.5, delay: 0.12 * i + 0.2 }}
               style={{
                 background: plan.highlighted
                   ? "linear-gradient(135deg, rgba(3,169,244,0.1) 0%, rgba(2,136,209,0.06) 100%)"
                   : "rgba(255,255,255,0.03)",
                 border: plan.highlighted
                   ? "1px solid rgba(3,169,244,0.35)"
-                  : "1px solid rgba(255,255,255,0.08)",
+                  : `1px solid rgba(255,255,255,0.08)`,
                 borderRadius: "1rem",
                 padding: "2rem",
                 position: "relative",
@@ -167,22 +199,43 @@ export default function PricingSection({ preview = false }: { preview?: boolean 
                     whiteSpace: "nowrap",
                   }}
                 >
-                  Most Popular
+                  Best Value
                 </div>
               )}
 
-              <h3
-                style={{
-                  fontFamily: "'Space Grotesk', sans-serif",
-                  fontSize: "1.05rem",
-                  fontWeight: 600,
-                  color: "rgba(226,232,240,0.7)",
-                  marginBottom: "0.75rem",
-                }}
-              >
-                {plan.name}
-              </h3>
+              {/* Plan name + badge */}
+              <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "0.75rem" }}>
+                <h3
+                  style={{
+                    fontFamily: "'Space Grotesk', sans-serif",
+                    fontSize: "1.05rem",
+                    fontWeight: 600,
+                    color: "rgba(226,232,240,0.7)",
+                    margin: 0,
+                  }}
+                >
+                  {plan.name}
+                </h3>
+                {plan.id === "beta" && (
+                  <span
+                    style={{
+                      background: "rgba(16,185,129,0.12)",
+                      border: "1px solid rgba(16,185,129,0.3)",
+                      color: "#10b981",
+                      fontSize: "0.68rem",
+                      fontWeight: 700,
+                      padding: "0.15rem 0.55rem",
+                      borderRadius: "999px",
+                      letterSpacing: "0.04em",
+                      textTransform: "uppercase",
+                    }}
+                  >
+                    Open now
+                  </span>
+                )}
+              </div>
 
+              {/* Price */}
               <div
                 style={{
                   display: "flex",
@@ -194,7 +247,7 @@ export default function PricingSection({ preview = false }: { preview?: boolean 
                 <span
                   style={{
                     fontFamily: "'Space Grotesk', sans-serif",
-                    fontSize: "2.75rem",
+                    fontSize: plan.id === "beta" ? "2.2rem" : "2.75rem",
                     fontWeight: 800,
                     color: "#fff",
                     letterSpacing: "-0.03em",
@@ -202,28 +255,28 @@ export default function PricingSection({ preview = false }: { preview?: boolean 
                 >
                   {plan.price}
                 </span>
-                <span
-                  style={{ color: "rgba(226,232,240,0.45)", fontSize: "0.9rem" }}
-                >
-                  {plan.period}
-                </span>
+                {plan.period && (
+                  <span style={{ color: "rgba(226,232,240,0.45)", fontSize: "0.9rem" }}>
+                    {plan.period}
+                  </span>
+                )}
               </div>
 
-              {plan.annualNote && (
+              {plan.note ? (
                 <p
                   style={{
                     fontSize: "0.8rem",
-                    color: "#10b981",
+                    color: plan.id === "beta" ? "#10b981" : "#10b981",
                     marginBottom: "1.5rem",
                   }}
                 >
-                  {plan.annualNote}
+                  {plan.note}
                 </p>
-              )}
-              {!plan.annualNote && (
+              ) : (
                 <div style={{ marginBottom: "1.5rem" }} />
               )}
 
+              {/* Features */}
               <ul
                 style={{
                   listStyle: "none",
@@ -245,39 +298,105 @@ export default function PricingSection({ preview = false }: { preview?: boolean 
                       fontSize: "0.88rem",
                     }}
                   >
-                    <Check />
+                    <Check color={plan.accent} />
                     {f}
                   </li>
                 ))}
               </ul>
 
-              <a
-                href={APP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  display: "block",
-                  textAlign: "center",
-                  padding: "0.8rem",
-                  borderRadius: "0.5rem",
-                  fontSize: "0.95rem",
-                  fontWeight: 700,
-                  textDecoration: "none",
-                  background: plan.highlighted
-                    ? "#03a9f4"
-                    : "rgba(255,255,255,0.07)",
-                  color: plan.highlighted ? "#fff" : "rgba(226,232,240,0.8)",
-                  border: plan.highlighted
-                    ? "none"
-                    : "1px solid rgba(255,255,255,0.12)",
-                  transition: "background 0.2s",
-                }}
-              >
-                {plan.cta}
-              </a>
+              {/* CTA */}
+              {plan.external ? (
+                <a
+                  href={plan.href}
+                  style={{
+                    display: "block",
+                    textAlign: "center",
+                    padding: "0.8rem",
+                    borderRadius: "0.5rem",
+                    fontSize: "0.95rem",
+                    fontWeight: 700,
+                    textDecoration: "none",
+                    background: plan.highlighted ? "#03a9f4" : "rgba(255,255,255,0.07)",
+                    color: plan.highlighted ? "#fff" : "rgba(226,232,240,0.8)",
+                    border: plan.highlighted ? "none" : "1px solid rgba(255,255,255,0.12)",
+                    transition: "background 0.2s",
+                  }}
+                >
+                  {plan.cta}
+                </a>
+              ) : (
+                <Link
+                  href={plan.href}
+                  style={{
+                    display: "block",
+                    textAlign: "center",
+                    padding: "0.8rem",
+                    borderRadius: "0.5rem",
+                    fontSize: "0.95rem",
+                    fontWeight: 700,
+                    textDecoration: "none",
+                    background: "rgba(16,185,129,0.15)",
+                    color: "#10b981",
+                    border: "1px solid rgba(16,185,129,0.3)",
+                    transition: "background 0.2s",
+                  }}
+                >
+                  {plan.cta}
+                </Link>
+              )}
             </motion.div>
           ))}
         </div>
+
+        {/* Email match notice */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.55 }}
+          style={{
+            maxWidth: "640px",
+            margin: "2.25rem auto 0",
+            padding: "0.9rem 1.1rem",
+            background: "rgba(3,169,244,0.06)",
+            border: "1px solid rgba(3,169,244,0.18)",
+            borderRadius: "0.75rem",
+            display: "flex",
+            gap: "0.7rem",
+            alignItems: "flex-start",
+          }}
+        >
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+            style={{ flexShrink: 0, marginTop: "1px" }}
+          >
+            <circle cx="8" cy="8" r="6.5" stroke="#03a9f4" strokeWidth="1.3" />
+            <path d="M8 5v4M8 11v1" stroke="#03a9f4" strokeWidth="1.4" strokeLinecap="round" />
+          </svg>
+          <p
+            style={{
+              color: "rgba(226,232,240,0.65)",
+              fontSize: "0.84rem",
+              lineHeight: 1.6,
+              margin: 0,
+            }}
+          >
+            <strong style={{ color: "rgba(226,232,240,0.9)" }}>Sign-in reminder:</strong> After
+            joining beta or subscribing, you access the app at{" "}
+            <a
+              href="https://app.parametrics.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: "#03a9f4", textDecoration: "none" }}
+            >
+              app.parametrics.app
+            </a>{" "}
+            using <strong style={{ color: "#03a9f4" }}>Google sign-in</strong>. The Google
+            account email must match the email you used to register or pay.
+          </p>
+        </motion.div>
 
         <motion.p
           initial={{ opacity: 0 }}
@@ -287,15 +406,15 @@ export default function PricingSection({ preview = false }: { preview?: boolean 
             textAlign: "center",
             color: "rgba(226,232,240,0.4)",
             fontSize: "0.82rem",
-            marginTop: "2rem",
+            marginTop: "1.5rem",
           }}
         >
-          Cancel anytime · No contracts · 7-day free trial
+          Paid plans · Cancel anytime · No long-term contracts
         </motion.p>
 
         {preview && (
-          <div style={{ textAlign: "center", marginTop: "1.5rem" }}>
-            <a
+          <div style={{ textAlign: "center", marginTop: "1.25rem" }}>
+            <Link
               href="/pricing"
               style={{
                 color: "#03a9f4",
@@ -305,7 +424,7 @@ export default function PricingSection({ preview = false }: { preview?: boolean 
               }}
             >
               See full pricing details →
-            </a>
+            </Link>
           </div>
         )}
       </div>

@@ -120,6 +120,24 @@ export default function Navbar() {
             target="_blank"
             rel="noopener noreferrer"
             style={{
+              color: "rgba(226,232,240,0.6)",
+              textDecoration: "none",
+              fontSize: "0.875rem",
+              fontWeight: 500,
+              transition: "color 0.2s",
+            }}
+            onMouseEnter={(e) =>
+              ((e.currentTarget as HTMLElement).style.color = "#fff")
+            }
+            onMouseLeave={(e) =>
+              ((e.currentTarget as HTMLElement).style.color = "rgba(226,232,240,0.6)")
+            }
+          >
+            Sign In
+          </a>
+          <Link
+            href="/beta"
+            style={{
               background: "#03a9f4",
               color: "#fff",
               padding: "0.45rem 1.1rem",
@@ -139,8 +157,8 @@ export default function Navbar() {
               (e.currentTarget as HTMLElement).style.boxShadow = "none";
             }}
           >
-            Launch App
-          </a>
+            Join Beta
+          </Link>
         </nav>
 
         {/* Mobile hamburger */}
@@ -224,10 +242,9 @@ export default function Navbar() {
                 {item.label}
               </Link>
             ))}
-            <a
-              href={APP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/beta"
+              onClick={() => setMenuOpen(false)}
               style={{
                 background: "#03a9f4",
                 color: "#fff",
@@ -240,7 +257,21 @@ export default function Navbar() {
                 marginTop: "0.5rem",
               }}
             >
-              Launch App
+              Join Beta — Free
+            </Link>
+            <a
+              href={APP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                color: "rgba(226,232,240,0.55)",
+                textDecoration: "none",
+                fontSize: "0.9rem",
+                fontWeight: 500,
+                textAlign: "center",
+              }}
+            >
+              Already have access? Sign In →
             </a>
           </motion.div>
         )}

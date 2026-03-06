@@ -90,11 +90,12 @@ export default function Footer() {
             </h4>
             <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
               {[
+                { href: "/beta", label: "Join Beta" },
                 { href: "/pricing", label: "Pricing" },
                 { href: "/faq", label: "FAQ" },
                 {
                   href: APP_URL,
-                  label: "Launch App",
+                  label: "Sign In to App",
                   external: true,
                 },
               ].map((item) =>
@@ -189,10 +190,8 @@ export default function Footer() {
             >
               Start Flying Better
             </h4>
-            <a
-              href={APP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/beta"
               style={{
                 display: "inline-block",
                 background: "#03a9f4",
@@ -204,8 +203,19 @@ export default function Footer() {
                 textDecoration: "none",
               }}
             >
-              Start Free Trial →
-            </a>
+              Join Beta — Free →
+            </Link>
+            <p style={{ margin: "0.6rem 0 0", fontSize: "0.8rem", color: "rgba(226,232,240,0.35)" }}>
+              Already have access?{" "}
+              <a
+                href={APP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: "rgba(226,232,240,0.5)", textDecoration: "none" }}
+              >
+                Sign in →
+              </a>
+            </p>
           </div>
         </div>
 

@@ -991,9 +991,7 @@ export default function Hero() {
               }}
             >
               <a
-                href={APP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/beta"
                 className="cta-primary"
                 style={{
                   display: "inline-flex",
@@ -1011,7 +1009,7 @@ export default function Hero() {
                   letterSpacing: "-0.01em",
                 }}
               >
-                Start Free Trial
+                Join Beta — Free
                 <svg
                   width="14"
                   height="14"
@@ -1029,9 +1027,7 @@ export default function Hero() {
                 </svg>
               </a>
               <a
-                href={APP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/pricing"
                 className="cta-secondary"
                 style={{
                   display: "inline-flex",
@@ -1050,17 +1046,10 @@ export default function Hero() {
                 }}
               >
                 <svg width="13" height="13" viewBox="0 0 16 16" fill="none">
-                  <path
-                    d="M2 8a6 6 0 1 0 12 0A6 6 0 0 0 2 8z"
-                    stroke="currentColor"
-                    strokeWidth="1.4"
-                  />
-                  <path
-                    d="M6.5 6.5L9.5 8l-3 1.5v-3z"
-                    fill="currentColor"
-                  />
+                  <path d="M2 3h12v10H2z" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round" />
+                  <path d="M5 7h6M5 10h4" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
                 </svg>
-                View Example Report
+                View Pricing
               </a>
             </motion.div>
 
@@ -1074,7 +1063,7 @@ export default function Hero() {
                 lineHeight: 1.55,
               }}
             >
-              Built for pilots who want objective feedback, better decisions, and stronger flying.
+              Free during beta · No credit card required · Sign in with the same Google account you register with
             </motion.p>
 
             {/* Benefit chips */}
