@@ -6,6 +6,20 @@ import { useRef } from "react";
 const features = [
   {
     icon: (
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#a855f7" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+        <circle cx="9" cy="7" r="4" />
+        <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+      </svg>
+    ),
+    title: "Pilot Benchmark",
+    description:
+      "Learn from any pilot in the world. Upload IGC files alongside your own and compare thermal selection, glide efficiency, and climb rates side-by-side. Benchmark against your group flight, regional champions, or world record holders — the gap analysis shows you exactly where the best pilots make the difference.",
+    color: "#a855f7",
+  },
+  {
+    icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#03a9f4" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="12" cy="12" r="10" />
         <path d="M12 2a10 10 0 0 1 0 20" />
@@ -14,7 +28,7 @@ const features = [
     ),
     title: "Thermal Analysis",
     description:
-      "Understand how well you centered thermals and how strong they were. Compare centering quality, climb rates, and time-in-core across all thermals in your flight.",
+      "Understand how well you centered thermals and how strong they were. Compare centering quality, climb rates, and time-in-core across every thermal in your flight.",
     color: "#03a9f4",
   },
   {
@@ -53,19 +67,6 @@ const features = [
     description:
       "Identify dangerous low saves and risky decisions in your flight. Understand when you were flying close to limits and what patterns to watch out for.",
     color: "#ef4444",
-  },
-  {
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#a855f7" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
-        <line x1="8" y1="21" x2="16" y2="21" />
-        <line x1="12" y1="17" x2="12" y2="21" />
-      </svg>
-    ),
-    title: "Batch Comparison",
-    description:
-      "Compare your flight with stronger pilots flying the same conditions. See exactly where the gap appears — thermal selection, glide, centering, or climb rate.",
-    color: "#a855f7",
   },
   {
     icon: (
@@ -128,7 +129,7 @@ export default function FeatureCards() {
             marginBottom: "0.75rem",
           }}
         >
-          Everything You Need to Fly Better
+          Learn From the Best. Fix What Matters.
         </motion.h2>
 
         <motion.p
@@ -144,7 +145,7 @@ export default function FeatureCards() {
             lineHeight: 1.6,
           }}
         >
-          Six powerful analysis modules, all from a single IGC file upload.
+          Six powerful analysis modules from a single IGC upload — including the ability to benchmark your flight against any pilot in the world.
         </motion.p>
 
         <div

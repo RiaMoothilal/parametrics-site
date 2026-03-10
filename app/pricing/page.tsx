@@ -7,7 +7,7 @@ import FAQSection from "@/components/FAQSection";
 export const metadata: Metadata = {
   title: "Pricing",
   description:
-    "Join the Parametrics beta for free, or subscribe to unlock the full feature set. Instant access via Google sign-in.",
+    "Join the Parametrics beta for free and start analyzing your flights right now. Paid plans unlock Pilot Benchmark, PDF export, and more.",
 };
 
 const APP_URL = "https://beta.parametrics.app";
@@ -58,8 +58,8 @@ export default function PricingPage() {
               lineHeight: 1.6,
             }}
           >
-            Join the beta at no cost and get full flight analysis right now.
-            Paid plans unlock batch comparison, export, and more.
+            Join the beta at no cost and start analyzing your flights right now.
+            Paid plans unlock Pilot Benchmark, PDF export, and more.
           </p>
           <p
             style={{
@@ -192,51 +192,6 @@ export default function PricingPage() {
               ))}
             </div>
 
-            {/* Email match callout */}
-            <div
-              style={{
-                marginTop: "1.5rem",
-                padding: "1rem 1.1rem",
-                background: "rgba(3,169,244,0.06)",
-                border: "1px solid rgba(3,169,244,0.2)",
-                borderRadius: "0.75rem",
-                display: "flex",
-                gap: "0.7rem",
-                alignItems: "flex-start",
-              }}
-            >
-              <svg
-                width="17"
-                height="17"
-                viewBox="0 0 16 16"
-                fill="none"
-                style={{ flexShrink: 0, marginTop: "1px" }}
-              >
-                <circle cx="8" cy="8" r="6.5" stroke="#03a9f4" strokeWidth="1.3" />
-                <path d="M8 5v4M8 11v1" stroke="#03a9f4" strokeWidth="1.4" strokeLinecap="round" />
-              </svg>
-              <p
-                style={{
-                  color: "rgba(226,232,240,0.65)",
-                  fontSize: "0.85rem",
-                  lineHeight: 1.6,
-                  margin: 0,
-                }}
-              >
-                <strong style={{ color: "rgba(226,232,240,0.9)" }}>🔐 Google sign-in required.</strong>{" "}
-                Sign in at{" "}
-                <a
-                  href="https://beta.parametrics.app"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ color: "#03a9f4", textDecoration: "none" }}
-                >
-                  beta.parametrics.app
-                </a>{" "}
-                using the Google account that matches the email you registered or paid with.
-                No password login — Google only.
-              </p>
-            </div>
           </div>
         </section>
 
@@ -289,9 +244,9 @@ export default function PricingPage() {
                   desc: "Automated improvement insights for each flight",
                 },
                 {
-                  icon: "📊",
-                  title: "Batch Comparison",
-                  desc: "Compare multiple pilots — available on paid plans",
+                  icon: "🏆",
+                  title: "Pilot Benchmark",
+                  desc: "Benchmark against any pilot in the world — available on paid plans",
                 },
               ].map((item) => (
                 <div

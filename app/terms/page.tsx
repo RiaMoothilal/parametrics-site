@@ -159,10 +159,10 @@ export default function TermsPage() {
           <Section title="7. Subscription and Payment">
             <p>
               Paid plans are billed on a monthly or annual basis as selected.
-              The 7-day free trial does not require a credit card. After the
-              trial period, continued use requires a paid subscription.
-              Subscriptions auto-renew unless cancelled before the renewal
-              date.
+              During the beta period, access is provided free of charge.
+              When paid plans launch, a free tier or trial may be offered as
+              described on the pricing page. Subscriptions auto-renew unless
+              cancelled before the renewal date.
             </p>
           </Section>
 

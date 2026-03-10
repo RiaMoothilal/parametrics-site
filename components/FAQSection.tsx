@@ -22,16 +22,16 @@ export const allFAQs = [
     a: "Not at all. Parametrics is built for intermediate pilots who want to improve through self-coaching. Whether you're flying XC, doing soaring days, or preparing for a competition, the analysis is useful at every level.",
   },
   {
-    q: "How does batch comparison work?",
-    a: "You can upload multiple IGC files from the same site or similar conditions and Parametrics will identify performance differences across thermal selection, glide efficiency, and climb rates.",
+    q: "How does Pilot Benchmark work?",
+    a: "Upload multiple IGC files alongside your own and Parametrics compares thermal selection, glide efficiency, and climb rates across all pilots. You can benchmark against anyone — pilots from your group flight, regional champions, world record holders, or anyone who shares their IGC. The gap analysis shows you exactly where the difference is made.",
   },
   {
     q: "Can I cancel my subscription?",
     a: "Yes, you can cancel anytime from your account settings. You'll retain access until the end of your billing period.",
   },
   {
-    q: "Is there a free trial?",
-    a: "Yes. Parametrics offers a 7-day free trial with no credit card required. Start analyzing your flights immediately.",
+    q: "Is it free to use right now?",
+    a: "Yes — Parametrics is completely free during the beta period. No credit card, no trial timer. Sign up, upload your IGC, and start analyzing immediately. Paid plans will unlock advanced features like Pilot Benchmark and PDF export when they launch.",
   },
   {
     q: "How long does analysis take?",

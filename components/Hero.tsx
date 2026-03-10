@@ -952,16 +952,16 @@ export default function Hero() {
                 margin: "0 0 1.1rem",
               }}
             >
-              Turn Your Paragliding Flights{" "}
+              See Exactly What the{" "}
               <span
                 style={{
-                  background: "linear-gradient(135deg, #03a9f4 0%, #38bdf8 100%)",
+                  background: "linear-gradient(135deg, #a855f7 0%, #03a9f4 100%)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                   backgroundClip: "text",
                 }}
               >
-                Into Coaching Insights
+                Best Pilots Do Differently
               </span>
             </motion.h1>
 
@@ -976,8 +976,8 @@ export default function Hero() {
                 maxWidth: "480px",
               }}
             >
-              Upload your IGC file and instantly analyze thermals, glide efficiency,
-              missed climbs, and risk patterns.
+              Upload your IGC file and benchmark your thermals, glide, and decisions against
+              any pilot in the world — your group, regional champions, or world record holders.
             </motion.p>
 
             {/* CTAs */}
@@ -1063,7 +1063,7 @@ export default function Hero() {
                 lineHeight: 1.55,
               }}
             >
-              Free during beta · No credit card required · Sign in with the same Google account you register with
+              Free during beta · No credit card required · Instant access
             </motion.p>
 
             {/* Benefit chips */}

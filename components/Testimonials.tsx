@@ -22,7 +22,7 @@ const testimonials = [
   },
   {
     quote:
-      "Batch comparison changed everything for me. Seeing exactly where top pilots diverged from my track on the same day told me everything I needed to know.",
+      "The Pilot Benchmark feature changed everything for me. Seeing exactly where the top pilots diverged from my track on the same day told me everything I needed to know.",
     name: "James T.",
     role: "Intermediate Pilot, Club Instructor",
     initials: "JT",

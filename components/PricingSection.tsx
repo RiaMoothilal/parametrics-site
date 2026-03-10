@@ -39,7 +39,7 @@ const plans = [
     note: null,
     features: [
       "Everything in Beta",
-      "Batch pilot comparison",
+      "Pilot Benchmark (vs any pilot in the world)",
       "Flight history archive",
       "Export reports as PDF",
       "Priority support",
@@ -59,7 +59,7 @@ const plans = [
     features: [
       "Everything in Monthly",
       "Early access to new features",
-      "Batch pilot comparison",
+      "Pilot Benchmark (vs any pilot in the world)",
       "Flight history archive",
       "Export reports as PDF",
       "Priority support",
@@ -382,8 +382,7 @@ export default function PricingSection({ preview = false }: { preview?: boolean 
               margin: 0,
             }}
           >
-            <strong style={{ color: "rgba(226,232,240,0.9)" }}>🔐 Google sign-in required.</strong> After
-            joining beta or subscribing, sign in at{" "}
+            <strong style={{ color: "rgba(226,232,240,0.9)" }}>Getting started:</strong> After joining beta or subscribing, head to{" "}
             <a
               href="https://beta.parametrics.app"
               target="_blank"
@@ -392,8 +391,7 @@ export default function PricingSection({ preview = false }: { preview?: boolean 
             >
               beta.parametrics.app
             </a>{" "}
-            using <strong style={{ color: "#03a9f4" }}>Sign in with Google</strong>. The Google
-            account email must match the email you used to register or pay.
+            and sign in with Google using the same email you registered with. That&rsquo;s it.
           </p>
         </motion.div>
 
