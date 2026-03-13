@@ -34,7 +34,7 @@ const plans = [
   {
     id: "monthly",
     name: "Monthly",
-    price: "$8",
+    price: "$9",
     period: "/ month",
     note: null,
     features: [
@@ -53,9 +53,9 @@ const plans = [
   {
     id: "annual",
     name: "Annual",
-    price: "$6",
+    price: "$7",
     period: "/ month",
-    note: "$72 / year — save % vs monthly",
+    note: "Billed as $84/year — 2 months free",
     features: [
       "Everything in Monthly",
       "Benefit X",
