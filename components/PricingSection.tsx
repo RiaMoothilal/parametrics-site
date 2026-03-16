@@ -4,9 +4,41 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import Link from "next/link";
 
-// ─── Paystack checkout links ──────────────────────────────────────────────────
-const PAYSTACK_MONTHLY_URL = "https://paystack.shop/pay/parametrics-monthly";
-const PAYSTACK_ANNUAL_URL = "https://paystack.shop/pay/parametrics-annual";
+// ─── PayFast hidden fields ────────────────────────────────────────────────────
+
+const PAYFAST_MONTHLY_FIELDS = [
+  { name: "merchant_id", value: "10046724" },
+  { name: "merchant_key", value: "kdhpgtqofnzjg" },
+  { name: "return_url", value: "https://parametrics.app/welcome" },
+  { name: "cancel_url", value: "https://parametrics.app/pricing" },
+  { name: "notify_url", value: "https://beta.parametrics.app/webhook/payfast" },
+  { name: "m_payment_id", value: "parametrics_monthly" },
+  { name: "amount", value: "170.00" },
+  { name: "item_name", value: "Parametrics Pilot - Monthly" },
+  { name: "subscription_type", value: "1" },
+  { name: "recurring_amount", value: "170.00" },
+  { name: "frequency", value: "3" },
+  { name: "cycles", value: "0" },
+  { name: "custom_str1", value: "monthly" },
+  { name: "signature", value: "1f52c88af0d174cb43db97726a41277c" },
+];
+
+const PAYFAST_ANNUAL_FIELDS = [
+  { name: "merchant_id", value: "10046724" },
+  { name: "merchant_key", value: "kdhpgtqofnzjg" },
+  { name: "return_url", value: "https://parametrics.app/welcome" },
+  { name: "cancel_url", value: "https://parametrics.app/pricing" },
+  { name: "notify_url", value: "https://beta.parametrics.app/webhook/payfast" },
+  { name: "m_payment_id", value: "parametrics_annual" },
+  { name: "amount", value: "1550.00" },
+  { name: "item_name", value: "Parametrics Pilot - Annual" },
+  { name: "subscription_type", value: "1" },
+  { name: "recurring_amount", value: "1550.00" },
+  { name: "frequency", value: "6" },
+  { name: "cycles", value: "0" },
+  { name: "custom_str1", value: "annual" },
+  { name: "signature", value: "799637b1144c014c7d36c7b23fb6e3e8" },
+];
 
 // ─── Plans ───────────────────────────────────────────────────────────────────
 
@@ -27,7 +59,7 @@ const plans = [
     ],
     cta: "Join Beta — Free",
     href: "/beta",
-    external: false,
+    payfastFields: null as { name: string; value: string }[] | null,
     highlighted: false,
     accent: "#10b981",
   },
@@ -36,7 +68,7 @@ const plans = [
     name: "Monthly",
     price: "$9",
     period: "/ month",
-    note: null,
+    note: "billed as R170/month",
     features: [
       "Everything in Beta",
       "Benefit X",
@@ -45,8 +77,8 @@ const plans = [
       "Benefit X",
     ],
     cta: "Subscribe Monthly",
-    href: PAYSTACK_MONTHLY_URL,
-    external: true,
+    href: null as string | null,
+    payfastFields: PAYFAST_MONTHLY_FIELDS,
     highlighted: false,
     accent: "#03a9f4",
   },
@@ -55,7 +87,7 @@ const plans = [
     name: "Annual",
     price: "$7",
     period: "/ month",
-    note: "Billed as $84/year — 2 months free",
+    note: "billed as $84/year (R1,550) — 2 months free",
     features: [
       "Everything in Monthly",
       "Benefit X",
@@ -65,8 +97,8 @@ const plans = [
       "Benefit X",
     ],
     cta: "Subscribe Annually",
-    href: PAYSTACK_ANNUAL_URL,
-    external: true,
+    href: null as string | null,
+    payfastFields: PAYFAST_ANNUAL_FIELDS,
     highlighted: true,
     accent: "#03a9f4",
   },
@@ -265,7 +297,7 @@ export default function PricingSection({ preview = false }: { preview?: boolean 
                 <p
                   style={{
                     fontSize: "0.8rem",
-                    color: plan.id === "beta" ? "#10b981" : "#10b981",
+                    color: plan.id === "beta" ? "#10b981" : "rgba(226,232,240,0.4)",
                     marginBottom: "1.5rem",
                   }}
                 >
@@ -304,28 +336,44 @@ export default function PricingSection({ preview = false }: { preview?: boolean 
               </ul>
 
               {/* CTA */}
-              {plan.external ? (
-                <a
-                  href={plan.href}
-                  style={{
-                    display: "block",
-                    textAlign: "center",
-                    padding: "0.8rem",
-                    borderRadius: "0.5rem",
-                    fontSize: "0.95rem",
-                    fontWeight: 700,
-                    textDecoration: "none",
-                    background: plan.highlighted ? "#03a9f4" : "rgba(255,255,255,0.07)",
-                    color: plan.highlighted ? "#fff" : "rgba(226,232,240,0.8)",
-                    border: plan.highlighted ? "none" : "1px solid rgba(255,255,255,0.12)",
-                    transition: "background 0.2s",
-                  }}
+              {plan.payfastFields ? (
+                <form
+                  action="https://www.payfast.co.za/eng/process"
+                  method="post"
+                  style={{ margin: 0 }}
                 >
-                  {plan.cta}
-                </a>
+                  {plan.payfastFields.map((field) => (
+                    <input
+                      key={field.name}
+                      type="hidden"
+                      name={field.name}
+                      value={field.value}
+                    />
+                  ))}
+                  <button
+                    type="submit"
+                    style={{
+                      display: "block",
+                      width: "100%",
+                      textAlign: "center",
+                      padding: "0.8rem",
+                      borderRadius: "0.5rem",
+                      fontSize: "0.95rem",
+                      fontWeight: 700,
+                      fontFamily: "inherit",
+                      cursor: "pointer",
+                      background: plan.highlighted ? "#03a9f4" : "rgba(255,255,255,0.07)",
+                      color: plan.highlighted ? "#fff" : "rgba(226,232,240,0.8)",
+                      border: plan.highlighted ? "none" : "1px solid rgba(255,255,255,0.12)",
+                      transition: "background 0.2s",
+                    }}
+                  >
+                    {plan.cta}
+                  </button>
+                </form>
               ) : (
                 <Link
-                  href={plan.href}
+                  href={plan.href!}
                   style={{
                     display: "block",
                     textAlign: "center",
