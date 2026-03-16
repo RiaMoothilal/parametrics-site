@@ -20,7 +20,6 @@ const PAYFAST_MONTHLY_FIELDS = [
   { name: "frequency", value: "3" },
   { name: "cycles", value: "0" },
   { name: "custom_str1", value: "monthly" },
-  { name: "signature", value: "27dc36d39ca19b5cb576f6c5359b1227" },
 ];
 
 const PAYFAST_ANNUAL_FIELDS = [
@@ -37,7 +36,6 @@ const PAYFAST_ANNUAL_FIELDS = [
   { name: "frequency", value: "6" },
   { name: "cycles", value: "0" },
   { name: "custom_str1", value: "annual" },
-  { name: "signature", value: "e4edb8267801a3b75b5c4621e9b11e21" },
 ];
 
 // ─── Plans ───────────────────────────────────────────────────────────────────
