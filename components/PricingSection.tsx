@@ -7,8 +7,8 @@ import Link from "next/link";
 // ─── PayFast hidden fields ────────────────────────────────────────────────────
 
 const PAYFAST_MONTHLY_FIELDS = [
-  { name: "merchant_id", value: "10046724" },
-  { name: "merchant_key", value: "kdhpgtqofnzjg" },
+  { name: "merchant_id", value: "24168664" },
+  { name: "merchant_key", value: "h39r3bcx016jr" },
   { name: "return_url", value: "https://parametrics.app/welcome" },
   { name: "cancel_url", value: "https://parametrics.app/pricing" },
   { name: "notify_url", value: "https://beta.parametrics.app/webhook/payfast" },
@@ -20,12 +20,12 @@ const PAYFAST_MONTHLY_FIELDS = [
   { name: "frequency", value: "3" },
   { name: "cycles", value: "0" },
   { name: "custom_str1", value: "monthly" },
-  { name: "signature", value: "1f52c88af0d174cb43db97726a41277c" },
+  { name: "signature", value: "5de2b5a639a60e6a00112dd09415ea00" },
 ];
 
 const PAYFAST_ANNUAL_FIELDS = [
-  { name: "merchant_id", value: "10046724" },
-  { name: "merchant_key", value: "kdhpgtqofnzjg" },
+  { name: "merchant_id", value: "24168664" },
+  { name: "merchant_key", value: "h39r3bcx016jr" },
   { name: "return_url", value: "https://parametrics.app/welcome" },
   { name: "cancel_url", value: "https://parametrics.app/pricing" },
   { name: "notify_url", value: "https://beta.parametrics.app/webhook/payfast" },
@@ -37,7 +37,7 @@ const PAYFAST_ANNUAL_FIELDS = [
   { name: "frequency", value: "6" },
   { name: "cycles", value: "0" },
   { name: "custom_str1", value: "annual" },
-  { name: "signature", value: "799637b1144c014c7d36c7b23fb6e3e8" },
+  { name: "signature", value: "e4edb8267801a3b75b5c4621e9b11e21" },
 ];
 
 // ─── Plans ───────────────────────────────────────────────────────────────────
