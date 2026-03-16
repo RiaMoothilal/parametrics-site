@@ -20,7 +20,7 @@ const PAYFAST_MONTHLY_FIELDS = [
   { name: "frequency", value: "3" },
   { name: "cycles", value: "0" },
   { name: "custom_str1", value: "monthly" },
-  { name: "signature", value: "5de2b5a639a60e6a00112dd09415ea00" },
+  { name: "signature", value: "27dc36d39ca19b5cb576f6c5359b1227" },
 ];
 
 const PAYFAST_ANNUAL_FIELDS = [
