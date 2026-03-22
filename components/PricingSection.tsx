@@ -40,21 +40,38 @@ const PAYFAST_ANNUAL_FIELDS = [
 
 // ─── Plans ───────────────────────────────────────────────────────────────────
 
+const FREE_LOCKED_FEATURES = [
+  "AI coaching: Safety, Glide, Landing, Overview, Comparison pages",
+  "Missed thermal opportunities (map and detail table)",
+  "3D landing approach visualization",
+  "Glide performance map",
+  "Multi-pilot comparison beyond 2 pilots",
+  "In-Depth and Full Analytics modes",
+];
+
 const plans = [
   {
     id: "beta",
-    name: "Beta",
+    name: "Free",
     price: "Free",
     period: "",
     note: "During beta period",
     features: [
-      "Thermal analysis",
-      "Glide efficiency",
-      "Missed thermal detection",
-      "Risk metrics",
-      "Coaching summary",
-      "IGC file upload",
+      "Upload and process IGC flight files",
+      "Full flight summary (duration, altitude, thermals, wind, landing finals)",
+      "Altitude timeline and flight phase breakdown",
+      "Interactive flight map",
+      "Thermal performance overview (avg climb rate, centering score, commit delay)",
+      "Safety overview (time below 100m AGL, low save count)",
+      "Landing analysis (8 metrics, final turn altitude, Safe/Tight/Risky verdict)",
+      "Landing approach map (2D satellite view)",
+      "Glide performance overview (avg ratio, avg speed)",
+      "AI thermal coaching (full, on every report)",
+      "3 reports per month",
+      "Up to 2 pilots per report",
+      "14-day report history",
     ],
+    lockedFeatures: FREE_LOCKED_FEATURES,
     cta: "Join Beta — Free",
     href: "/beta",
     payfastFields: null as { name: string; value: string }[] | null,
@@ -68,12 +85,19 @@ const plans = [
     period: "/ month",
     note: "billed as R170/month",
     features: [
-      "Everything in Beta",
-      "Benefit X",
-      "Benefit X",
-      "Benefit X",
-      "Benefit X",
+      "Everything in Free, plus:",
+      "AI coaching on every analysis page (Safety, Glide, Landing, Overview, Comparison)",
+      "Missed thermal opportunities — map showing exact locations, strength, and altitude",
+      "3D landing approach visualization (interactive, rotatable)",
+      "Glide performance map",
+      "Multi-pilot comparison (up to 10 pilots per report)",
+      "In-Depth and Full Analytics modes",
+      "Benchmark pilot comparison (compare against a named pilot, not just group average)",
+      "Wind analysis map",
+      "20 reports per month",
+      "180-day report history",
     ],
+    lockedFeatures: [] as string[],
     cta: "Subscribe Monthly",
     href: null as string | null,
     payfastFields: PAYFAST_MONTHLY_FIELDS,
@@ -87,13 +111,19 @@ const plans = [
     period: "/ month",
     note: "billed as $84/year (R1,550) — 2 months free",
     features: [
-      "Everything in Monthly",
-      "Benefit X",
-      "Benefit X",
-      "Benefit X",
-      "Benefit X",
-      "Benefit X",
+      "Everything in Free, plus:",
+      "AI coaching on every analysis page (Safety, Glide, Landing, Overview, Comparison)",
+      "Missed thermal opportunities — map showing exact locations, strength, and altitude",
+      "3D landing approach visualization (interactive, rotatable)",
+      "Glide performance map",
+      "Multi-pilot comparison (up to 10 pilots per report)",
+      "In-Depth and Full Analytics modes",
+      "Benchmark pilot comparison (compare against a named pilot, not just group average)",
+      "Wind analysis map",
+      "20 reports per month",
+      "180-day report history",
     ],
+    lockedFeatures: [] as string[],
     cta: "Subscribe Annually",
     href: null as string | null,
     payfastFields: PAYFAST_ANNUAL_FIELDS,
@@ -116,6 +146,25 @@ function Check({ color }: { color: string }) {
       style={{ flexShrink: 0 }}
     >
       <polyline points="20 6 9 17 4 12" />
+    </svg>
+  );
+}
+
+function Lock() {
+  return (
+    <svg
+      width="14"
+      height="14"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="rgba(226,232,240,0.3)"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      style={{ flexShrink: 0 }}
+    >
+      <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+      <path d="M7 11V7a5 5 0 0 1 10 0v4" />
     </svg>
   );
 }
@@ -321,13 +370,28 @@ export default function PricingSection({ preview = false }: { preview?: boolean 
                     key={f}
                     style={{
                       display: "flex",
-                      alignItems: "center",
+                      alignItems: "flex-start",
                       gap: "0.6rem",
                       color: "rgba(226,232,240,0.75)",
                       fontSize: "0.88rem",
                     }}
                   >
-                    <Check color={plan.accent} />
+                    <span style={{ marginTop: "2px" }}><Check color={plan.accent} /></span>
+                    {f}
+                  </li>
+                ))}
+                {plan.lockedFeatures.map((f) => (
+                  <li
+                    key={f}
+                    style={{
+                      display: "flex",
+                      alignItems: "flex-start",
+                      gap: "0.6rem",
+                      color: "rgba(226,232,240,0.3)",
+                      fontSize: "0.88rem",
+                    }}
+                  >
+                    <span style={{ marginTop: "2px" }}><Lock /></span>
                     {f}
                   </li>
                 ))}
