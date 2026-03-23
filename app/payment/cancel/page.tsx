@@ -98,7 +98,7 @@ export default function PaymentCancelPage() {
             }}
           >
             No charge was made. You can try again whenever you&rsquo;re ready, or
-            join the free beta instead.
+            use the free plan instead.
           </p>
 
           {/* Options */}
@@ -152,7 +152,7 @@ export default function PaymentCancelPage() {
                 transition: "background 0.2s ease",
               }}
             >
-              Join the Free Beta Instead
+              Use the Free Plan Instead
             </Link>
           </div>
 

@@ -7,7 +7,7 @@ import FAQSection from "@/components/FAQSection";
 export const metadata: Metadata = {
   title: "Pricing",
   description:
-    "Join the Parametrics beta for free and start analyzing your flights right now. Paid plans unlock Pilot Benchmark, PDF export, and more.",
+    "Start analyzing your flights for free. Paid plans unlock full AI coaching, missed thermal maps, 3D landing visualization, and more.",
 };
 
 const APP_URL = "https://beta.parametrics.app";
@@ -58,8 +58,8 @@ export default function PricingPage() {
               lineHeight: 1.6,
             }}
           >
-            Join the beta at no cost and start analyzing your flights right now.
-            Paid plans unlock Pilot Benchmark, PDF export, and more.
+            Start analyzing your flights for free. Paid plans unlock full AI
+            coaching, missed thermal maps, 3D landing visualization, and more.
           </p>
           <p
             style={{
@@ -111,7 +111,7 @@ export default function PricingPage() {
                 {
                   step: "1",
                   title: "Register or subscribe",
-                  desc: "Join the free beta by email, or subscribe via Paystack. Your access is created automatically.",
+                  desc: "Sign up free by email, or subscribe via PayFast. Your access is created automatically.",
                   color: "#03a9f4",
                 },
                 {

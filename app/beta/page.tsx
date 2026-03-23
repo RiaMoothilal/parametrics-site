@@ -128,7 +128,7 @@ export default function BetaPage() {
                   textTransform: "uppercase",
                 }}
               >
-                Beta Access — Free
+                Free Access
               </span>
             </span>
           </div>
@@ -146,7 +146,7 @@ export default function BetaPage() {
               lineHeight: 1.15,
             }}
           >
-            Join the Beta
+            Start for Free
           </h1>
           <p
             style={{
@@ -157,8 +157,8 @@ export default function BetaPage() {
               margin: "0 0 2.25rem",
             }}
           >
-            Get free access to Parametrics during beta. Upload your IGC files and
-            receive structured flight analysis — thermals, glide, risk, and coaching
+            Get free access to Parametrics. Upload your IGC files and receive
+            structured flight analysis — thermals, glide, risk, and coaching
             insights.
           </p>
 
@@ -277,7 +277,7 @@ export default function BetaPage() {
                   </>
                 ) : (
                   <>
-                    Join Beta — Free
+                    Get Free Access
                     <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
                       <path d="M3 8h10M9 4l4 4-4 4" stroke="#fff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
@@ -336,7 +336,7 @@ export default function BetaPage() {
                 marginBottom: "1rem",
               }}
             >
-              Beta access includes
+              Free access includes
             </p>
             <div
               style={{

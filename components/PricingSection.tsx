@@ -55,7 +55,7 @@ const plans = [
     name: "Free",
     price: "Free",
     period: "",
-    note: "During beta period",
+    note: "No credit card required",
     features: [
       "Upload and process IGC flight files",
       "Full flight summary (duration, altitude, thermals, wind, landing finals)",
@@ -228,7 +228,7 @@ export default function PricingSection({ preview = false }: { preview?: boolean 
             marginBottom: "3.5rem",
           }}
         >
-          Join the free beta, or subscribe for the full feature set.
+          Sign up free, or subscribe for the full feature set.
         </motion.p>
 
         {/* Plan cards */}
@@ -492,7 +492,7 @@ export default function PricingSection({ preview = false }: { preview?: boolean 
               margin: 0,
             }}
           >
-            <strong style={{ color: "rgba(226,232,240,0.9)" }}>Getting started:</strong> After joining beta or subscribing, head to{" "}
+            <strong style={{ color: "rgba(226,232,240,0.9)" }}>Getting started:</strong> After signing up or subscribing, head to{" "}
             <a
               href="https://beta.parametrics.app"
               target="_blank"
