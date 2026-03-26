@@ -6,12 +6,12 @@ import { useRef } from "react";
 const APP_URL = "https://beta.parametrics.app";
 
 const questions = [
-  { q: "Was that thermal actually good?", icon: "🌀" },
-  { q: "Did I leave climbs too early?", icon: "⬆️" },
-  { q: "Was my glide efficient?", icon: "📐" },
-  { q: "Did I miss thermals along track?", icon: "👁️" },
-  { q: "Why did other pilots climb better?", icon: "📊" },
-  { q: "Was my landing approach risky?", icon: "⚠️" },
+  { q: "Was that thermal actually good?", icon: "🌀", highlight: false },
+  { q: "Did I leave climbs too early?", icon: "⬆️", highlight: false },
+  { q: "Was my glide efficient?", icon: "📐", highlight: false },
+  { q: "Did I miss thermals along track?", icon: "👁️", highlight: false },
+  { q: "Why did other pilots climb better than me?", icon: "📊", highlight: true },
+  { q: "Was my landing approach risky?", icon: "⚠️", highlight: false },
 ];
 
 export default function ProblemSection() {
@@ -99,8 +99,12 @@ export default function ProblemSection() {
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.1 * i + 0.2 }}
               style={{
-                background: "rgba(255,255,255,0.03)",
-                border: "1px solid rgba(255,255,255,0.07)",
+                background: item.highlight
+                  ? "rgba(168,85,247,0.07)"
+                  : "rgba(255,255,255,0.03)",
+                border: item.highlight
+                  ? "1px solid rgba(168,85,247,0.3)"
+                  : "1px solid rgba(255,255,255,0.07)",
                 borderRadius: "0.75rem",
                 padding: "1.1rem 1.25rem",
                 display: "flex",
@@ -111,8 +115,11 @@ export default function ProblemSection() {
               <span style={{ fontSize: "1.3rem" }}>{item.icon}</span>
               <p
                 style={{
-                  color: "rgba(226,232,240,0.75)",
-                  fontSize: "0.95rem",
+                  color: item.highlight
+                    ? "rgba(226,232,240,0.92)"
+                    : "rgba(226,232,240,0.75)",
+                  fontSize: item.highlight ? "1rem" : "0.95rem",
+                  fontWeight: item.highlight ? 600 : 400,
                   margin: 0,
                   fontStyle: "italic",
                 }}
@@ -164,8 +171,8 @@ export default function ProblemSection() {
               lineHeight: 1.6,
             }}
           >
-            Upload your IGC file and get a data-driven coaching report. Know
-            exactly what happened and how to improve your next flight.
+            Upload your group's flights — yours and anyone who flew the same day.
+            See who climbed better, where they gained the altitude, and exactly what to do differently.
           </p>
           <a
             href={APP_URL}
@@ -182,7 +189,7 @@ export default function ProblemSection() {
               textDecoration: "none",
             }}
           >
-            Analyze Your Last Flight →
+            Compare Your Group Flight →
           </a>
         </motion.div>
       </div>

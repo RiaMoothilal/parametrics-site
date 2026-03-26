@@ -6,33 +6,36 @@ import { useRef } from "react";
 const steps = [
   {
     number: "01",
-    title: "Upload Your IGC File",
+    title: "Upload Your Group's Flights",
     description:
-      "Export your flight log from XCTrack, FlySkyHy, Oudie, or any other instrument and upload the IGC file directly to Parametrics.",
+      "Add your IGC file alongside any pilots you want to compare — your club mates who flew the same day, a regional champion, or a world record holder. Any IGC file works.",
     icon: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#03a9f4" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-        <polyline points="17 8 12 3 7 8" />
-        <line x1="12" y1="3" x2="12" y2="15" />
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+        <circle cx="9" cy="7" r="4" />
+        <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
       </svg>
     ),
   },
   {
     number: "02",
-    title: "Automatic Flight Analysis",
+    title: "Side-by-Side Comparison",
     description:
-      "Parametrics processes your flight data instantly — detecting thermals, computing glide ratios, identifying missed lift, and scoring your decisions.",
+      "Parametrics overlays every flight — thermals used, glide lines taken, altitudes at each decision point. You see exactly where your paths diverged and who made the better call.",
     icon: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#03a9f4" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+        <line x1="18" y1="20" x2="18" y2="10" />
+        <line x1="12" y1="20" x2="12" y2="4" />
+        <line x1="6" y1="20" x2="6" y2="14" />
       </svg>
     ),
   },
   {
     number: "03",
-    title: "Improve With Actionable Insights",
+    title: "Close the Gap",
     description:
-      "Receive a coaching summary with specific, concrete advice. Apply the insights to your next flight and track your improvement over time.",
+      "Get a coaching report that names the exact moments where the benchmark pilot gained altitude on you — and what to do differently next time. No guesswork, just data.",
     icon: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#03a9f4" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 20h9" />
@@ -82,7 +85,7 @@ export default function HowItWorks() {
             marginBottom: "3.5rem",
           }}
         >
-          Three Steps to Better Flying
+          Three Steps to Flying Like the Best
         </motion.h2>
 
         <div

@@ -145,7 +145,7 @@ export default function FeatureCards() {
             lineHeight: 1.6,
           }}
         >
-          Six powerful analysis modules from a single IGC upload — including the ability to benchmark your flight against any pilot in the world.
+          Upload your group's flights and see exactly where the difference is made — thermal by thermal, glide by glide, decision by decision.
         </motion.p>
 
         <div

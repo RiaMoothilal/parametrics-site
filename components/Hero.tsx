@@ -773,7 +773,7 @@ function ProductMockup() {
         </div>
         <div>
           <div style={{ fontSize: "0.6rem", color: "rgba(226,232,240,0.38)" }}>
-            IGC uploaded
+            Group flight loaded
           </div>
           <div
             style={{
@@ -782,7 +782,7 @@ function ProductMockup() {
               color: "#10b981",
             }}
           >
-            Instant analysis ✓
+            3 pilots compared ✓
           </div>
         </div>
       </motion.div>
@@ -976,8 +976,8 @@ export default function Hero() {
                 maxWidth: "480px",
               }}
             >
-              Upload your IGC file and benchmark your thermals, glide, and decisions against
-              any pilot in the world — your group, regional champions, or world record holders.
+              Compare your thermals, glide decisions, and climb strategy against your group or any
+              pilot in the world — and see precisely where the gap is made.
             </motion.p>
 
             {/* CTAs */}
@@ -1078,6 +1078,14 @@ export default function Hero() {
               <BenefitChip
                 icon={
                   <svg width="11" height="11" viewBox="0 0 14 14" fill="none">
+                    <path d="M2 4h4M2 7h4M2 10h4M8 4h4M8 7h4M8 10h4" stroke="#03a9f4" strokeWidth="1.5" strokeLinecap="round" />
+                  </svg>
+                }
+                label="Pilot Benchmark"
+              />
+              <BenefitChip
+                icon={
+                  <svg width="11" height="11" viewBox="0 0 14 14" fill="none">
                     <path d="M7 12V2M3 6l4-4 4 4" stroke="#03a9f4" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 }
@@ -1099,14 +1107,6 @@ export default function Hero() {
                   </svg>
                 }
                 label="Coaching Insights"
-              />
-              <BenefitChip
-                icon={
-                  <svg width="11" height="11" viewBox="0 0 14 14" fill="none">
-                    <path d="M2 11l3-3 2 2 5-5" stroke="#03a9f4" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                }
-                label="Risk Metrics"
               />
             </motion.div>
           </motion.div>
