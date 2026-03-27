@@ -72,7 +72,7 @@ const plans = [
       "14-day report history",
     ],
     lockedFeatures: FREE_LOCKED_FEATURES,
-    cta: "Join Beta — Free",
+    cta: "Get Free Access",
     href: "/beta",
     payfastFields: null as { name: string; value: string }[] | null,
     highlighted: false,

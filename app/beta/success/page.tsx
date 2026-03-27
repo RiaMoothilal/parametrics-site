@@ -110,9 +110,8 @@ function BetaSuccessContent() {
             margin: "0 0 2rem",
           }}
         >
-          Beta access has been granted to{" "}
-          <strong style={{ color: "#fff" }}>{email}</strong>. You can sign in to
-          the app right now.
+          60 days of Pro access, on us. Sign in with{" "}
+          <strong style={{ color: "#fff" }}>{email}</strong> to get started.
         </p>
 
         {/* Steps card */}
@@ -161,13 +160,11 @@ function BetaSuccessContent() {
             },
             {
               step: "2",
-              title: "🔐 Use the matching Google account",
+              title: "Use your Google account",
               body: (
                 <>
-                  Select the Google account for{" "}
-                  <strong style={{ color: "#10b981" }}>{email}</strong>. This must
-                  match exactly — a different address will be denied access.
-                  No password login is supported.
+                  When prompted, select the Google account for{" "}
+                  <strong style={{ color: "#10b981" }}>{email}</strong>.
                 </>
               ),
               color: "#10b981",
@@ -232,48 +229,6 @@ function BetaSuccessContent() {
           ))}
         </div>
 
-        {/* Email match callout */}
-        <div
-          style={{
-            padding: "0.85rem 1rem",
-            background: "rgba(16,185,129,0.07)",
-            border: "1px solid rgba(16,185,129,0.22)",
-            borderRadius: "0.625rem",
-            display: "flex",
-            gap: "0.65rem",
-            alignItems: "flex-start",
-            textAlign: "left",
-            marginBottom: "2rem",
-          }}
-        >
-          <svg
-            width="16"
-            height="16"
-            viewBox="0 0 16 16"
-            fill="none"
-            style={{ flexShrink: 0, marginTop: "1px" }}
-          >
-            <path
-              d="M8 1l2 5h5l-4 3 1.5 5L8 11l-4.5 3L5 9 1 6h5L8 1z"
-              fill="#10b981"
-              fillOpacity="0.9"
-            />
-          </svg>
-          <p
-            style={{
-              color: "rgba(226,232,240,0.7)",
-              fontSize: "0.83rem",
-              lineHeight: 1.55,
-              margin: 0,
-            }}
-          >
-            <strong style={{ color: "#10b981" }}>Remember:</strong> The Google
-            account you use to sign in must match{" "}
-            <strong style={{ color: "rgba(226,232,240,0.9)" }}>{email}</strong>.
-            If you sign in with a different address, access will be denied.
-          </p>
-        </div>
-
         {/* CTA */}
         <a
           href={APP_URL}
@@ -293,6 +248,7 @@ function BetaSuccessContent() {
             boxShadow: "0 0 28px rgba(16,185,129,0.35)",
             letterSpacing: "-0.01em",
             transition: "transform 0.15s ease, box-shadow 0.15s ease",
+            marginTop: "2rem",
           }}
           onMouseEnter={(e) => {
             (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(-2px)";

@@ -1009,7 +1009,7 @@ export default function Hero() {
                   letterSpacing: "-0.01em",
                 }}
               >
-                Join Beta — Free
+                Get Free Access
                 <svg
                   width="14"
                   height="14"

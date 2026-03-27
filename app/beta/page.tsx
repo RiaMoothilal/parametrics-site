@@ -317,8 +317,7 @@ export default function BetaPage() {
                   margin: 0,
                 }}
               >
-                <strong style={{ color: "rgba(226,232,240,0.88)" }}>🔐 Google sign-in required.</strong> You must sign in to the app using the{" "}
-                <strong style={{ color: "#03a9f4" }}>same Google account</strong> as the email you enter above. No password — Google only.
+                Sign in at beta.parametrics.app using the Google account for this email address.
               </p>
             </div>
           </div>

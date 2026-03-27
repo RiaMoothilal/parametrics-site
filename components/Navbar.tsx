@@ -157,7 +157,7 @@ export default function Navbar() {
               (e.currentTarget as HTMLElement).style.boxShadow = "none";
             }}
           >
-            Join Beta
+            Get Access
           </Link>
         </nav>
 
@@ -257,7 +257,7 @@ export default function Navbar() {
                 marginTop: "0.5rem",
               }}
             >
-              Join Beta — Free
+              Get Free Access
             </Link>
             <a
               href={APP_URL}

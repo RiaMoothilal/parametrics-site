@@ -90,7 +90,7 @@ export default function Footer() {
             </h4>
             <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
               {[
-                { href: "/beta", label: "Join Beta" },
+                { href: "/beta", label: "Get Access" },
                 { href: "/pricing", label: "Pricing" },
                 { href: "/faq", label: "FAQ" },
                 {
@@ -203,7 +203,7 @@ export default function Footer() {
                 textDecoration: "none",
               }}
             >
-              Join Beta — Free →
+              Get Free Access →
             </Link>
             <p style={{ margin: "0.6rem 0 0", fontSize: "0.8rem", color: "rgba(226,232,240,0.35)" }}>
               Already have access?{" "}
