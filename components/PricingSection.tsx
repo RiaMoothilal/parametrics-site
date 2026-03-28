@@ -55,7 +55,7 @@ const plans = [
     name: "Free",
     price: "Free",
     period: "",
-    note: "No credit card required",
+    note: "First 60 days at Pro level — free",
     features: [
       "Upload and process IGC flight files",
       "Full flight summary (duration, altitude, thermals, wind, landing finals)",

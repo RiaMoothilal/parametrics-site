@@ -104,8 +104,8 @@ export default function BetaPage() {
                 display: "inline-flex",
                 alignItems: "center",
                 gap: "0.45rem",
-                background: "rgba(3,169,244,0.09)",
-                border: "1px solid rgba(3,169,244,0.26)",
+                background: "rgba(16,185,129,0.09)",
+                border: "1px solid rgba(16,185,129,0.3)",
                 borderRadius: "999px",
                 padding: "0.3rem 0.85rem",
               }}
@@ -115,20 +115,20 @@ export default function BetaPage() {
                   width: "6px",
                   height: "6px",
                   borderRadius: "50%",
-                  background: "#03a9f4",
+                  background: "#10b981",
                   display: "inline-block",
                 }}
               />
               <span
                 style={{
-                  color: "#03a9f4",
+                  color: "#10b981",
                   fontSize: "0.76rem",
                   fontWeight: 600,
                   letterSpacing: "0.05em",
                   textTransform: "uppercase",
                 }}
               >
-                Free Access
+                60 Days Pro — Free
               </span>
             </span>
           </div>
@@ -146,7 +146,7 @@ export default function BetaPage() {
               lineHeight: 1.15,
             }}
           >
-            Start for Free
+            60 Days of Pro, Free
           </h1>
           <p
             style={{
@@ -157,9 +157,8 @@ export default function BetaPage() {
               margin: "0 0 2.25rem",
             }}
           >
-            Get free access to Parametrics. Upload your IGC files and receive
-            structured flight analysis — thermals, glide, risk, and coaching
-            insights.
+            Sign up and get full Pro access for 60 days — no credit card
+            required. After that, keep the free tier or upgrade to stay on Pro.
           </p>
 
           {/* Form card */}
@@ -335,7 +334,7 @@ export default function BetaPage() {
                 marginBottom: "1rem",
               }}
             >
-              Free access includes
+              Your first 60 days includes
             </p>
             <div
               style={{
@@ -345,12 +344,12 @@ export default function BetaPage() {
               }}
             >
               {[
-                "Thermal analysis",
-                "Glide efficiency",
-                "Missed thermals",
-                "Risk metrics",
-                "Coaching summary",
-                "IGC file upload",
+                "Up to 10 pilots per report",
+                "20 reports per month",
+                "Flight Story Video",
+                "Multi-pilot comparison",
+                "AI coaching — all pages",
+                "6-month report history",
               ].map((item) => (
                 <div
                   key={item}
@@ -363,8 +362,8 @@ export default function BetaPage() {
                   }}
                 >
                   <svg width="13" height="13" viewBox="0 0 16 16" fill="none">
-                    <circle cx="8" cy="8" r="6.5" fill="rgba(3,169,244,0.12)" stroke="rgba(3,169,244,0.3)" strokeWidth="1" />
-                    <path d="M5 8l2 2 4-4" stroke="#03a9f4" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                    <circle cx="8" cy="8" r="6.5" fill="rgba(16,185,129,0.12)" stroke="rgba(16,185,129,0.3)" strokeWidth="1" />
+                    <path d="M5 8l2 2 4-4" stroke="#10b981" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                   {item}
                 </div>
