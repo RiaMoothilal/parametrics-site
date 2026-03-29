@@ -97,6 +97,42 @@ export default function BetaPage() {
             padding: "2rem 1.5rem 4rem",
           }}
         >
+          {/* Status badge */}
+          <div style={{ textAlign: "center", marginBottom: "1.5rem" }}>
+            <span
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "0.45rem",
+                background: "rgba(16,185,129,0.09)",
+                border: "1px solid rgba(16,185,129,0.3)",
+                borderRadius: "999px",
+                padding: "0.3rem 0.85rem",
+              }}
+            >
+              <span
+                style={{
+                  width: "6px",
+                  height: "6px",
+                  borderRadius: "50%",
+                  background: "#10b981",
+                  display: "inline-block",
+                }}
+              />
+              <span
+                style={{
+                  color: "#10b981",
+                  fontSize: "0.76rem",
+                  fontWeight: 600,
+                  letterSpacing: "0.05em",
+                  textTransform: "uppercase",
+                }}
+              >
+                Open now · No waitlist
+              </span>
+            </span>
+          </div>
+
           {/* Heading */}
           <h1
             style={{

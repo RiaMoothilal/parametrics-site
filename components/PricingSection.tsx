@@ -358,7 +358,7 @@ export default function PricingSection({ preview = false }: { preview?: boolean 
                 <p
                   style={{
                     fontSize: "0.8rem",
-                    color: plan.id === "beta" ? "#10b981" : "rgba(226,232,240,0.4)",
+                    color: plan.id === "beta" ? "#10b981" : "rgba(226,232,240,0.55)",
                     marginBottom: "1.5rem",
                   }}
                 >

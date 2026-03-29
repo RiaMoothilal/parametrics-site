@@ -177,16 +177,16 @@ export default function FlightStorySection() {
               display: "inline-flex",
               alignItems: "center",
               gap: "0.4rem",
-              background: "rgba(168,85,247,0.15)",
-              border: "1px solid rgba(168,85,247,0.35)",
-              color: "#c084fc",
+              background: "#03a9f4",
+              color: "#fff",
               padding: "0.55rem 1.2rem",
               borderRadius: "0.5rem",
               fontSize: "0.88rem",
               fontWeight: 700,
               textDecoration: "none",
               letterSpacing: "-0.01em",
-              transition: "background 0.2s ease, border-color 0.2s ease",
+              transition: "background 0.2s ease, box-shadow 0.2s ease",
+              boxShadow: "0 0 20px rgba(3,169,244,0.3)",
             }}
           >
             Get Free Access
