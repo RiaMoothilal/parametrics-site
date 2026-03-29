@@ -90,7 +90,7 @@ export default function Footer() {
             </h4>
             <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
               {[
-                { href: "/beta", label: "Get Access" },
+                { href: "/signup", label: "Get Access" },
                 { href: "/pricing", label: "Pricing" },
                 { href: "/faq", label: "FAQ" },
                 {
