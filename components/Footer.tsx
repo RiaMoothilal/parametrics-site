@@ -176,6 +176,39 @@ export default function Footer() {
             </ul>
           </div>
 
+          {/* Contact */}
+          <div>
+            <h4
+              style={{
+                color: "#fff",
+                fontSize: "0.85rem",
+                fontWeight: 600,
+                textTransform: "uppercase",
+                letterSpacing: "0.08em",
+                marginBottom: "1rem",
+              }}
+            >
+              Contact
+            </h4>
+            <a
+              href="mailto:support@parametrics.app"
+              style={{
+                color: "rgba(226,232,240,0.55)",
+                textDecoration: "none",
+                fontSize: "0.9rem",
+                transition: "color 0.2s",
+              }}
+              onMouseEnter={(e) =>
+                ((e.currentTarget as HTMLElement).style.color = "#03a9f4")
+              }
+              onMouseLeave={(e) =>
+                ((e.currentTarget as HTMLElement).style.color = "rgba(226,232,240,0.55)")
+              }
+            >
+              support@parametrics.app
+            </a>
+          </div>
+
           {/* CTA */}
           <div>
             <h4
