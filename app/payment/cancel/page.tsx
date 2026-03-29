@@ -135,7 +135,7 @@ export default function PaymentCancelPage() {
             </Link>
 
             <Link
-              href="/beta"
+              href="/signup"
               style={{
                 display: "inline-flex",
                 alignItems: "center",

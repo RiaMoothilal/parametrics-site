@@ -175,7 +175,7 @@ export default function ProblemSection() {
             See who climbed better, where they gained the altitude, and exactly what to do differently.
           </p>
           <a
-            href="/beta"
+            href="/signup"
             style={{
               display: "inline-block",
               background: "#03a9f4",

@@ -8,7 +8,7 @@ import Footer from "@/components/Footer";
 
 const APP_URL = "https://beta.parametrics.app";
 
-function BetaSuccessContent() {
+function SignupSuccessContent() {
   const params = useSearchParams();
   const email = params.get("email") || "your email";
 
@@ -272,12 +272,12 @@ function BetaSuccessContent() {
   );
 }
 
-export default function BetaSuccessPage() {
+export default function SignupSuccessPage() {
   return (
     <>
       <Navbar />
       <Suspense fallback={<div style={{ minHeight: "100vh" }} />}>
-        <BetaSuccessContent />
+        <SignupSuccessContent />
       </Suspense>
       <Footer />
     </>

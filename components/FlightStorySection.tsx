@@ -172,7 +172,7 @@ export default function FlightStorySection() {
           </p>
 
           <Link
-            href="/beta"
+            href="/signup"
             style={{
               display: "inline-flex",
               alignItems: "center",

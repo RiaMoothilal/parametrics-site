@@ -191,7 +191,7 @@ export default function Footer() {
               Start Flying Better
             </h4>
             <Link
-              href="/beta"
+              href="/signup"
               style={{
                 display: "inline-block",
                 background: "#03a9f4",

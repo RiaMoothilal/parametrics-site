@@ -159,9 +159,7 @@ export default function TermsPage() {
           <Section title="7. Subscription and Payment">
             <p>
               Paid plans are billed on a monthly or annual basis as selected.
-              During the beta period, access is provided free of charge.
-              When paid plans launch, a free tier or trial may be offered as
-              described on the pricing page. Subscriptions auto-renew unless
+              A free tier and 60-day Pro trial are available as described on the pricing page. Subscriptions auto-renew unless
               cancelled before the renewal date.
             </p>
           </Section>

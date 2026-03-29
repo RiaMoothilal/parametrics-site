@@ -73,7 +73,7 @@ const plans = [
     ],
     lockedFeatures: FREE_LOCKED_FEATURES,
     cta: "Get Free Access",
-    href: "/beta",
+    href: "/signup",
     payfastFields: null as { name: string; value: string }[] | null,
     highlighted: false,
     accent: "#10b981",

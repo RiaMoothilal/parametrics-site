@@ -136,7 +136,7 @@ export default function Navbar() {
             Sign In
           </a>
           <Link
-            href="/beta"
+            href="/signup"
             style={{
               background: "#03a9f4",
               color: "#fff",
@@ -243,7 +243,7 @@ export default function Navbar() {
               </Link>
             ))}
             <Link
-              href="/beta"
+              href="/signup"
               onClick={() => setMenuOpen(false)}
               style={{
                 background: "#03a9f4",

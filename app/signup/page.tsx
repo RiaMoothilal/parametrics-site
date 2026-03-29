@@ -5,10 +5,10 @@ import { useRouter } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const BETA_API = "https://beta.parametrics.app/beta/signup";
+const SIGNUP_API = "https://beta.parametrics.app/beta/signup";
 const APP_URL = "https://beta.parametrics.app";
 
-export default function BetaPage() {
+export default function SignupPage() {
   const router = useRouter();
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -22,14 +22,14 @@ export default function BetaPage() {
     setErrorMsg("");
 
     try {
-      const res = await fetch(BETA_API, {
+      const res = await fetch(SIGNUP_API, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email: email.trim().toLowerCase() }),
       });
 
       if (res.ok) {
-        router.push(`/beta/success?email=${encodeURIComponent(email.trim().toLowerCase())}`);
+        router.push(`/signup/success?email=${encodeURIComponent(email.trim().toLowerCase())}`);
       } else {
         let msg = "Something went wrong. Please try again.";
         try {
@@ -171,7 +171,7 @@ export default function BetaPage() {
           >
             <form onSubmit={handleSubmit}>
               <label
-                htmlFor="beta-email"
+                htmlFor="signup-email"
                 style={{
                   display: "block",
                   color: "rgba(226,232,240,0.75)",
@@ -183,7 +183,7 @@ export default function BetaPage() {
                 Your email address
               </label>
               <input
-                id="beta-email"
+                id="signup-email"
                 type="email"
                 required
                 value={email}

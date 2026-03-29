@@ -991,7 +991,7 @@ export default function Hero() {
               }}
             >
               <a
-                href="/beta"
+                href="/signup"
                 className="cta-primary"
                 style={{
                   display: "inline-flex",
