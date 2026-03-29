@@ -30,25 +30,6 @@ const testimonials = [
   },
 ];
 
-function StarRating() {
-  return (
-    <div style={{ display: "flex", gap: "3px", marginBottom: "1rem" }}>
-      {[...Array(5)].map((_, i) => (
-        <svg
-          key={i}
-          width="14"
-          height="14"
-          viewBox="0 0 24 24"
-          fill="#f59e0b"
-          stroke="none"
-        >
-          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-        </svg>
-      ))}
-    </div>
-  );
-}
-
 export default function Testimonials() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
@@ -92,12 +73,42 @@ export default function Testimonials() {
           Pilots Who Fly Better With Data
         </motion.h2>
 
+        {/* Credibility banner */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          style={{
+            textAlign: "center",
+            padding: "1.25rem 1.5rem",
+            background: "rgba(255,255,255,0.02)",
+            border: "1px solid rgba(255,255,255,0.07)",
+            borderRadius: "0.75rem",
+            marginBottom: "2rem",
+          }}
+        >
+          <p
+            style={{
+              color: "rgba(226,232,240,0.55)",
+              fontSize: "0.9rem",
+              margin: 0,
+              lineHeight: 1.6,
+            }}
+          >
+            🪂 &nbsp;
+            <strong style={{ color: "rgba(226,232,240,0.8)" }}>
+              Built by a competition pilot and instructor with thousands of flights.
+            </strong>{" "}
+            Parametrics was created from the inside — by a pilot who wanted better answers about their own flying.
+          </p>
+        </motion.div>
+
         <div
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
             gap: "1.25rem",
-            marginBottom: "4rem",
+            marginBottom: "2rem",
           }}
         >
           {testimonials.map((t, i) => (
@@ -113,7 +124,6 @@ export default function Testimonials() {
                 padding: "1.75rem",
               }}
             >
-              <StarRating />
               <blockquote
                 style={{
                   margin: "0 0 1.5rem",
@@ -168,34 +178,6 @@ export default function Testimonials() {
           ))}
         </div>
 
-        {/* Credibility banner */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          style={{
-            textAlign: "center",
-            padding: "1.5rem",
-            background: "rgba(255,255,255,0.02)",
-            border: "1px solid rgba(255,255,255,0.07)",
-            borderRadius: "0.75rem",
-          }}
-        >
-          <p
-            style={{
-              color: "rgba(226,232,240,0.55)",
-              fontSize: "0.9rem",
-              margin: 0,
-              lineHeight: 1.6,
-            }}
-          >
-            ✈️ &nbsp;
-            <strong style={{ color: "rgba(226,232,240,0.8)" }}>
-              Built by a competition pilot and instructor with thousands of flights.
-            </strong>{" "}
-            Parametrics was created from the inside — by a pilot who wanted better answers about their own flying.
-          </p>
-        </motion.div>
       </div>
     </section>
   );

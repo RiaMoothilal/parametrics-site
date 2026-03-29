@@ -1063,7 +1063,7 @@ export default function Hero() {
                 lineHeight: 1.55,
               }}
             >
-              Free to start · No credit card required · Instant access
+              60-day Pro trial · No credit card required · Instant access
             </motion.p>
 
             {/* Benefit chips */}

@@ -149,7 +149,7 @@ export default function ProblemSection() {
               marginBottom: "0.75rem",
             }}
           >
-            ✈️
+            🪂
           </div>
           <h3
             style={{
@@ -175,9 +175,7 @@ export default function ProblemSection() {
             See who climbed better, where they gained the altitude, and exactly what to do differently.
           </p>
           <a
-            href={APP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/beta"
             style={{
               display: "inline-block",
               background: "#03a9f4",

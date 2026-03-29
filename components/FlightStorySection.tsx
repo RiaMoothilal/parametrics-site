@@ -130,6 +130,7 @@ export default function FlightStorySection() {
           <iframe
             src={DEMO_STORY_URL}
             title="Parametrics Flight Story demo"
+            className="flight-story-iframe"
             style={{
               width: "100%",
               height: "520px",
@@ -139,6 +140,11 @@ export default function FlightStorySection() {
             allow="autoplay"
             loading="lazy"
           />
+          <style>{`
+            @media (max-width: 768px) {
+              .flight-story-iframe { height: 320px !important; }
+            }
+          `}</style>
         </motion.div>
 
         {/* Caption + CTA */}

@@ -97,42 +97,6 @@ export default function BetaPage() {
             padding: "2rem 1.5rem 4rem",
           }}
         >
-          {/* Badge */}
-          <div style={{ textAlign: "center", marginBottom: "1.5rem" }}>
-            <span
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "0.45rem",
-                background: "rgba(16,185,129,0.09)",
-                border: "1px solid rgba(16,185,129,0.3)",
-                borderRadius: "999px",
-                padding: "0.3rem 0.85rem",
-              }}
-            >
-              <span
-                style={{
-                  width: "6px",
-                  height: "6px",
-                  borderRadius: "50%",
-                  background: "#10b981",
-                  display: "inline-block",
-                }}
-              />
-              <span
-                style={{
-                  color: "#10b981",
-                  fontSize: "0.76rem",
-                  fontWeight: 600,
-                  letterSpacing: "0.05em",
-                  textTransform: "uppercase",
-                }}
-              >
-                60 Days Pro — Free
-              </span>
-            </span>
-          </div>
-
           {/* Heading */}
           <h1
             style={{
@@ -157,8 +121,7 @@ export default function BetaPage() {
               margin: "0 0 2.25rem",
             }}
           >
-            Sign up and get full Pro access for 60 days — no credit card
-            required. After that, keep the free tier or upgrade to stay on Pro.
+            Full Pro access, no credit card. After 60 days, stay on free or keep Pro for R170/month.
           </p>
 
           {/* Form card */}

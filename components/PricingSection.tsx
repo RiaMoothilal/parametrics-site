@@ -81,9 +81,9 @@ const plans = [
   {
     id: "monthly",
     name: "Monthly",
-    price: "$9",
+    price: "R170",
     period: "/ month",
-    note: "billed as R170/month",
+    note: "~$9 USD / month",
     features: [
       "Everything in Free, plus:",
       "AI coaching on every analysis page (Safety, Glide, Landing, Overview, Comparison)",
@@ -107,9 +107,9 @@ const plans = [
   {
     id: "annual",
     name: "Annual",
-    price: "$7",
-    period: "/ month",
-    note: "billed as $84/year (R1,550) — 2 months free",
+    price: "R1,550",
+    period: "/ year",
+    note: "~$84 USD / year — 2 months free",
     features: [
       "Everything in Free, plus:",
       "AI coaching on every analysis page (Safety, Glide, Landing, Overview, Comparison)",
@@ -225,10 +225,24 @@ export default function PricingSection({ preview = false }: { preview?: boolean 
             textAlign: "center",
             color: "rgba(226,232,240,0.6)",
             fontSize: "1rem",
-            marginBottom: "3.5rem",
+            marginBottom: "0.75rem",
           }}
         >
           Sign up free, or subscribe for the full feature set.
+        </motion.p>
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={inView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.5, delay: 0.25 }}
+          style={{
+            textAlign: "center",
+            color: "rgba(226,232,240,0.35)",
+            fontSize: "0.8rem",
+            marginBottom: "3rem",
+          }}
+        >
+          Charged in ZAR via PayFast. USD figures are approximate at current rates.
         </motion.p>
 
         {/* Plan cards */}
@@ -434,76 +448,52 @@ export default function PricingSection({ preview = false }: { preview?: boolean 
                   </button>
                 </form>
               ) : (
-                <Link
-                  href={plan.href!}
-                  style={{
-                    display: "block",
-                    textAlign: "center",
-                    padding: "0.8rem",
-                    borderRadius: "0.5rem",
-                    fontSize: "0.95rem",
-                    fontWeight: 700,
-                    textDecoration: "none",
-                    background: "rgba(16,185,129,0.15)",
-                    color: "#10b981",
-                    border: "1px solid rgba(16,185,129,0.3)",
-                    transition: "background 0.2s",
-                  }}
-                >
-                  {plan.cta}
-                </Link>
+                <>
+                  <Link
+                    href={plan.href!}
+                    style={{
+                      display: "block",
+                      textAlign: "center",
+                      padding: "0.8rem",
+                      borderRadius: "0.5rem",
+                      fontSize: "0.95rem",
+                      fontWeight: 700,
+                      textDecoration: "none",
+                      background: "rgba(16,185,129,0.15)",
+                      color: "#10b981",
+                      border: "1px solid rgba(16,185,129,0.3)",
+                      transition: "background 0.2s",
+                    }}
+                  >
+                    {plan.cta}
+                  </Link>
+                  {plan.id === "beta" && (
+                    <div
+                      style={{
+                        marginTop: "0.85rem",
+                        padding: "0.65rem 0.85rem",
+                        background: "rgba(3,169,244,0.06)",
+                        border: "1px solid rgba(3,169,244,0.18)",
+                        borderRadius: "0.5rem",
+                        display: "flex",
+                        gap: "0.55rem",
+                        alignItems: "flex-start",
+                      }}
+                    >
+                      <svg width="13" height="13" viewBox="0 0 16 16" fill="none" style={{ flexShrink: 0, marginTop: "1px" }}>
+                        <circle cx="8" cy="8" r="6.5" stroke="#03a9f4" strokeWidth="1.3" />
+                        <path d="M8 5v4M8 11v1" stroke="#03a9f4" strokeWidth="1.4" strokeLinecap="round" />
+                      </svg>
+                      <p style={{ color: "rgba(226,232,240,0.6)", fontSize: "0.78rem", lineHeight: 1.5, margin: 0 }}>
+                        Sign in with Google using the same email you register with.
+                      </p>
+                    </div>
+                  )}
+                </>
               )}
             </motion.div>
           ))}
         </div>
-
-        {/* Email match notice */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: 0.55 }}
-          style={{
-            maxWidth: "640px",
-            margin: "2.25rem auto 0",
-            padding: "0.9rem 1.1rem",
-            background: "rgba(3,169,244,0.06)",
-            border: "1px solid rgba(3,169,244,0.18)",
-            borderRadius: "0.75rem",
-            display: "flex",
-            gap: "0.7rem",
-            alignItems: "flex-start",
-          }}
-        >
-          <svg
-            width="16"
-            height="16"
-            viewBox="0 0 16 16"
-            fill="none"
-            style={{ flexShrink: 0, marginTop: "1px" }}
-          >
-            <circle cx="8" cy="8" r="6.5" stroke="#03a9f4" strokeWidth="1.3" />
-            <path d="M8 5v4M8 11v1" stroke="#03a9f4" strokeWidth="1.4" strokeLinecap="round" />
-          </svg>
-          <p
-            style={{
-              color: "rgba(226,232,240,0.65)",
-              fontSize: "0.84rem",
-              lineHeight: 1.6,
-              margin: 0,
-            }}
-          >
-            <strong style={{ color: "rgba(226,232,240,0.9)" }}>Getting started:</strong> After signing up or subscribing, head to{" "}
-            <a
-              href="https://beta.parametrics.app"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ color: "#03a9f4", textDecoration: "none" }}
-            >
-              beta.parametrics.app
-            </a>{" "}
-            and sign in with Google using the same email you registered with. That&rsquo;s it.
-          </p>
-        </motion.div>
 
         <motion.p
           initial={{ opacity: 0 }}

@@ -157,7 +157,7 @@ export default function Navbar() {
               (e.currentTarget as HTMLElement).style.boxShadow = "none";
             }}
           >
-            Get Access
+            Get Free Access
           </Link>
         </nav>
 
