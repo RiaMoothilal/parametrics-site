@@ -6,7 +6,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const APP_URL = "https://beta.parametrics.app";
+const APP_URL = "https://app.parametrics.app";
 
 function PaymentSuccessContent() {
   const params = useSearchParams();
@@ -151,7 +151,7 @@ function PaymentSuccessContent() {
                     rel="noopener noreferrer"
                     style={{ color: "#03a9f4", textDecoration: "none" }}
                   >
-                    beta.parametrics.app
+                    app.parametrics.app
                   </a>{" "}
                   and click <strong style={{ color: "rgba(226,232,240,0.85)" }}>Sign in with Google</strong>.
                 </>

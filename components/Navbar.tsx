@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 
-const APP_URL = "https://beta.parametrics.app";
+const APP_URL = "https://app.parametrics.app";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);

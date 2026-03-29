@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 
-const APP_URL = "https://beta.parametrics.app";
+const APP_URL = "https://app.parametrics.app";
 
 export default function Footer() {
   const year = new Date().getFullYear();

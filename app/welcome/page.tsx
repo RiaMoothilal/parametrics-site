@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description: "Payment successful. Sign in to start analysing your flights.",
 };
 
-const APP_URL = "https://beta.parametrics.app";
+const APP_URL = "https://app.parametrics.app";
 
 export default function WelcomePage() {
   return (

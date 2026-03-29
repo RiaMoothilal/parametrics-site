@@ -5,8 +5,8 @@ import { useRouter } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const SIGNUP_API = "https://beta.parametrics.app/beta/signup";
-const APP_URL = "https://beta.parametrics.app";
+const SIGNUP_API = "https://app.parametrics.app/signup";
+const APP_URL = "https://app.parametrics.app";
 
 export default function SignupPage() {
   const router = useRouter();
@@ -315,7 +315,7 @@ export default function SignupPage() {
                   margin: 0,
                 }}
               >
-                Sign in at beta.parametrics.app using the Google account for this email address.
+                Sign in at app.parametrics.app using the Google account for this email address.
               </p>
             </div>
           </div>

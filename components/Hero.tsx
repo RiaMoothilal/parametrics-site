@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import type { ReactNode } from "react";
 
-const APP_URL = "https://beta.parametrics.app";
+const APP_URL = "https://app.parametrics.app";
 
 // ─── Animation variants ───────────────────────────────────────────────────────
 
@@ -545,7 +545,7 @@ function ProductMockup() {
                   color: "rgba(226,232,240,0.32)",
                 }}
               >
-                beta.parametrics.app
+                app.parametrics.app
               </span>
             </div>
           </div>

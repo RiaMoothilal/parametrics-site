@@ -5,7 +5,7 @@ import { useRef } from "react";
 import Link from "next/link";
 
 const DEMO_STORY_URL =
-  "https://beta.parametrics.app/stories/31a7dc90ef61424a3256959e2c29d6f3/story.html";
+  "https://app.parametrics.app/stories/31a7dc90ef61424a3256959e2c29d6f3/story.html";
 
 export default function FlightStorySection() {
   const ref = useRef(null);

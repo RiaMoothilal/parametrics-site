@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     "Start analyzing your flights for free. Paid plans unlock full AI coaching, missed thermal maps, 3D landing visualization, and more.",
 };
 
-const APP_URL = "https://beta.parametrics.app";
+const APP_URL = "https://app.parametrics.app";
 
 export default function PricingPage() {
   return (
@@ -126,7 +126,7 @@ export default function PricingPage() {
                         rel="noopener noreferrer"
                         style={{ color: "#03a9f4", textDecoration: "none" }}
                       >
-                        beta.parametrics.app
+                        app.parametrics.app
                       </a>{" "}
                       and sign in with the <strong>same email</strong> you used to register or pay.
                     </>
