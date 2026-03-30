@@ -7,7 +7,7 @@ import Image from "next/image";
 const screens = [
   {
     label: "Thermal Analysis",
-    sub: "Climb rate, centering quality, and time-in-core across every thermal in your flight.",
+    sub: "Climb rate, centering quality, potential missed opportunities and more.",
     src: "/screenshots/thermal-analysis.png",
     accent: "#03a9f4",
   },
