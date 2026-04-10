@@ -91,6 +91,7 @@ export default function Navbar() {
           className="hidden-mobile"
         >
           {[
+            { href: "/stories", label: "Stories" },
             { href: "/pricing", label: "Pricing" },
             { href: "/faq", label: "FAQ" },
           ].map((item) => (
@@ -223,6 +224,7 @@ export default function Navbar() {
             }}
           >
             {[
+              { href: "/stories", label: "Stories" },
               { href: "/pricing", label: "Pricing" },
               { href: "/faq", label: "FAQ" },
               { href: "/privacy", label: "Privacy" },
