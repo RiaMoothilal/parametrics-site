@@ -1,0 +1,54 @@
+---
+title: "How It Works"
+description: "How Parametrics processes your IGC file — from signal cleaning to AI coaching — and what each stage of analysis actually measures."
+date: "2026-04-10"
+type: "Explainer"
+---
+
+Parametrics.App doesn't guess. It measures every data point in your IGC file at per-second resolution — then uses AI to explain what it found in plain language.
+
+Upload your flight log and the app runs a seven-stage analytics chain on your actual data.
+
+## What happens when you process a flight
+
+### 1. Signal cleaning
+
+Raw GPS and barometric pressure data are smoothed and validated. Clean speed, heading, turn rate, and vertical speed values are computed for every second of your flight. Takeoff and landing points are identified using custom algorithms built to handle real-world anomalies — including, yes, the pilot who landed and immediately jumped into a car. Tracklogs with low-quality data (sparse fixes, GPS-only altitude, missing segments) are flagged before analysis begins.
+
+### 2. Terrain mapping
+
+Real topographic data is automatically matched to your flight area. Every GPS fix is mapped against a high-accuracy digital elevation model, giving you Above Ground Level (AGL) altitude — the number that actually matters for safety and soaring decisions. Vertical accuracy is approximately 30m, which is more than sufficient to determine whether you're flying low.
+
+### 3. Behaviour detection
+
+A custom algorithm segments your entire flight into labelled phases: turning, thermalling, gliding, spiralling, and final approach. This segmentation is the foundation every subsequent analysis builds on — it's what allows the app to examine each phase of your flight in isolation and in context.
+
+### 4. Thermal analysis
+
+Each thermal is analysed in detail: climb rate, altitude gained, circle consistency, and a centring score that measures how effectively you tracked the core circle by circle. The analysis also captures how long you flew straight before committing, and your turn rate throughout. These metrics — drawn from your flights and others' — let you see pilot behaviour as fact, not impression. This is where comparison analytics across multiple pilots make learning genuinely evidence-based.
+
+### 5. Missed opportunities
+
+The app identifies moments where lift was present but unused — instances where you glided through rising air without stopping to thermal. Each missed opportunity is logged with location, lift strength, and flight context. Terrain mapping adds an important layer here: by measuring your height relative to the surrounding valley floor, the app distinguishes between being genuinely low and simply flying above high terrain.
+
+### 6. Safety audit
+
+Every low-altitude event is identified, characterised by duration and minimum height, and assembled into a structured safety picture of the flight. This analysis is particularly relevant for intermediate pilots who may normalise scratching, or apply ridge-soaring habits to thermic mountain environments where the risk profile is very different.
+
+### 7. Landing analysis
+
+Landing tends to be treated as an afterthought once you're licensed — just the end of the flight. But a meaningful share of paragliding accidents happen in this phase. They're rarely fatal, but broken ankles, spinal compression fractures, and damaged gliders are serious outcomes worth preventing.
+
+The final approach is reconstructed from your GPS trace: glide ratio, descent rates, ground speeds, and near-ground turning activity, presented as 2D and 3D visuals. Rather than relying on AGL altitude (with its ~30m margin), the landing analysis works backwards from the touchdown point using your vario's barometric pressure data — giving accurate height readings throughout the approach. GPS handles horizontal ground speed reliably, and together the two sources produce a clear picture of what actually happened on final.
+
+## Where AI fits in
+
+The analytics engine produces a detailed set of measurements across every phase of your flight. What AI adds is interpretation — translating those numbers into coaching-style feedback in plain language, without generalising or filling gaps with assumptions. Every insight is grounded in a real measurement from your flight.
+
+The AI also draws on aggregate statistics from our database, which includes flights from some of the world's top pilots alongside everyday pilots. That context is what turns raw metrics into meaningful benchmarks.
+
+To be clear about the division of responsibility: AI explains what the numbers mean. It doesn't generate them.
+
+## Built on real flights
+
+The analytics were developed and validated against real paragliding flight logs across multiple sites and conditions. The benchmark throughout: outputs that match what an experienced coach would observe — consistent, honest, and grounded in the data.
