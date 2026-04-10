@@ -7,14 +7,6 @@ const TYPE_COLORS: Record<string, string> = {
   "Research": "#a855f7",
 };
 
-function formatDate(dateStr: string) {
-  return new Date(dateStr).toLocaleDateString("en-GB", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  });
-}
-
 export default function StoriesTeaser() {
   const stories = getAllStories().slice(0, 3);
   if (stories.length === 0) return null;
@@ -104,33 +96,17 @@ export default function StoriesTeaser() {
                     gap: "0.5rem",
                   }}
                 >
-                  <div
+                  <span
                     style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "0.5rem",
+                      fontSize: "0.68rem",
+                      fontWeight: 700,
+                      textTransform: "uppercase",
+                      letterSpacing: "0.06em",
+                      color: accentColor,
                     }}
                   >
-                    <span
-                      style={{
-                        fontSize: "0.68rem",
-                        fontWeight: 700,
-                        textTransform: "uppercase",
-                        letterSpacing: "0.06em",
-                        color: accentColor,
-                      }}
-                    >
-                      {story.type}
-                    </span>
-                    <span
-                      style={{
-                        color: "rgba(226,232,240,0.3)",
-                        fontSize: "0.72rem",
-                      }}
-                    >
-                      {formatDate(story.date)}
-                    </span>
-                  </div>
+                    {story.type}
+                  </span>
                   <h3
                     style={{
                       fontFamily: "'Space Grotesk', sans-serif",

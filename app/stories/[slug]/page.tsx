@@ -32,14 +32,6 @@ const TYPE_COLORS: Record<string, string> = {
   "Research": "#a855f7",
 };
 
-function formatDate(dateStr: string) {
-  return new Date(dateStr).toLocaleDateString("en-GB", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  });
-}
-
 export default function StoryPage({ params }: Props) {
   let story;
   try {
@@ -88,14 +80,7 @@ export default function StoryPage({ params }: Props) {
           </Link>
 
           {/* Meta */}
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "0.6rem",
-              marginBottom: "1rem",
-            }}
-          >
+          <div style={{ marginBottom: "1rem" }}>
             <span
               style={{
                 fontSize: "0.72rem",
@@ -106,9 +91,6 @@ export default function StoryPage({ params }: Props) {
               }}
             >
               {meta.type}
-            </span>
-            <span style={{ color: "rgba(226,232,240,0.3)", fontSize: "0.78rem" }}>
-              {formatDate(meta.date)}
             </span>
           </div>
 

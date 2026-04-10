@@ -16,14 +16,6 @@ const TYPE_COLORS: Record<string, string> = {
   "Research": "#a855f7",
 };
 
-function formatDate(dateStr: string) {
-  return new Date(dateStr).toLocaleDateString("en-GB", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  });
-}
-
 export default function StoriesPage() {
   const stories = getAllStories();
 
@@ -103,9 +95,6 @@ export default function StoriesPage() {
                       <div>
                         <div
                           style={{
-                            display: "flex",
-                            alignItems: "center",
-                            gap: "0.6rem",
                             marginBottom: "0.4rem",
                           }}
                         >
@@ -119,14 +108,6 @@ export default function StoriesPage() {
                             }}
                           >
                             {story.type}
-                          </span>
-                          <span
-                            style={{
-                              color: "rgba(226,232,240,0.3)",
-                              fontSize: "0.75rem",
-                            }}
-                          >
-                            {formatDate(story.date)}
                           </span>
                         </div>
                         <h2
