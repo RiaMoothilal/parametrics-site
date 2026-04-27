@@ -135,8 +135,10 @@ export default function PrivacyPage() {
             </p>
             <br />
             <p>
-              Flight data is processed on secure servers and is not used for
-              any purpose other than providing you with analysis results.
+              Flight data is processed on secure servers. It may also be used
+              in aggregate, anonymised form for fleet-wide performance
+              benchmarking and statistical analysis. Individual flights are
+              never shared or attributed to you in this context.
             </p>
           </Section>
 
@@ -144,9 +146,10 @@ export default function PrivacyPage() {
             <p>
               We retain your account information and flight data for as long
               as your account is active. You may delete your data at any time
-              from within the application. Upon account deletion, all
-              associated flight data will be permanently removed within 30
-              days.
+              from within the application. Upon account deletion, all flight
+              data you uploaded will be permanently removed within 30 days.
+              Flight data uploaded by other users is not affected by your
+              account deletion and will remain on the platform.
             </p>
           </Section>
 
