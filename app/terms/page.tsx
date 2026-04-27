@@ -86,9 +86,11 @@ export default function TermsPage() {
 
           <Section title="1. Acceptance of Terms">
             <p>
-              By accessing or using Parametrics ("the Service"), you agree
-              to be bound by these Terms of Service. If you do not agree to
-              these terms, please do not use the Service.
+              Parametrics is operated by Air School Paragliding (Pty) Ltd
+              ("we", "us", or "our"). By accessing or using Parametrics
+              ("the Service"), you agree to be bound by these Terms of
+              Service. If you do not agree to these terms, please do not
+              use the Service.
             </p>
           </Section>
 
@@ -168,8 +170,14 @@ export default function TermsPage() {
             <p>
               You may cancel your subscription at any time from your account
               settings. Cancellation takes effect at the end of the current
-              billing period. We do not offer partial refunds for unused
-              subscription time, except where required by law.
+              billing period.
+            </p>
+            <br />
+            <p>
+              Payments are processed by Paddle, who acts as Merchant of
+              Record. Refund requests must be submitted within 14 days of
+              purchase. To request a refund, please contact us through the
+              support channel within the application.
             </p>
           </Section>
 
