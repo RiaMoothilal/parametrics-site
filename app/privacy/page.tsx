@@ -79,7 +79,7 @@ export default function PrivacyPage() {
                 fontSize: "0.85rem",
               }}
             >
-              Last updated: January 2025 · This is a draft document.
+              Last updated: January 2025
             </p>
           </div>
 
@@ -194,29 +194,6 @@ export default function PrivacyPage() {
             </p>
           </Section>
 
-          <div
-            style={{
-              background: "rgba(3,169,244,0.06)",
-              border: "1px solid rgba(3,169,244,0.15)",
-              borderRadius: "0.75rem",
-              padding: "1.25rem",
-              marginTop: "2rem",
-            }}
-          >
-            <p
-              style={{
-                color: "rgba(226,232,240,0.6)",
-                fontSize: "0.82rem",
-                margin: 0,
-                lineHeight: 1.6,
-              }}
-            >
-              <strong style={{ color: "#03a9f4" }}>Note:</strong> This is a
-              draft privacy policy. Before launching, this document should be
-              reviewed by a qualified legal professional to ensure compliance
-              with applicable laws (GDPR, POPIA, etc.) in your jurisdiction.
-            </p>
-          </div>
         </div>
       </main>
       <Footer />
