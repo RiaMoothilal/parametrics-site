@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
 const APP_URL = "https://app.parametrics.app";
@@ -51,14 +50,35 @@ export default function Navbar() {
       >
         {/* Logo */}
         <Link href="/" style={{ textDecoration: "none" }}>
-          <Image
-            src="/logo.png"
-            alt="Parametrics"
-            height={36}
-            width={180}
-            style={{ objectFit: "contain", objectPosition: "left" }}
-            priority
-          />
+          <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+              <path
+                d="M14 3L25 21H3L14 3Z"
+                fill="none"
+                stroke="#03a9f4"
+                strokeWidth="1.8"
+                strokeLinejoin="round"
+              />
+              <path
+                d="M14 8L21 19H7L14 8Z"
+                fill="rgba(3,169,244,0.2)"
+                stroke="#03a9f4"
+                strokeWidth="1"
+                strokeLinejoin="round"
+              />
+            </svg>
+            <span
+              style={{
+                fontFamily: "'Space Grotesk', sans-serif",
+                fontWeight: 700,
+                fontSize: "1.2rem",
+                color: "#fff",
+                letterSpacing: "-0.02em",
+              }}
+            >
+              Parametrics
+            </span>
+          </div>
         </Link>
 
         {/* Desktop nav */}
