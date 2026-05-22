@@ -32,6 +32,9 @@ export default function PaddleCheckoutButton({
     console.log("[Paddle] instance:", paddleRef.current);
     paddleRef.current?.Checkout.open({
       items: [{ priceId, quantity: 1 }],
+      settings: {
+        successUrl: `${window.location.origin}/payment/success`,
+      },
     });
   }
 
