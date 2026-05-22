@@ -23,10 +23,13 @@ export default function PaddleCheckoutButton({
     }
     paddlePromise.then((p) => {
       paddleRef.current = p;
+      console.log("[Paddle] initialized:", p);
     });
   }, []);
 
   function handleClick() {
+    console.log("[Paddle] opening checkout for priceId:", priceId);
+    console.log("[Paddle] instance:", paddleRef.current);
     paddleRef.current?.Checkout.open({
       items: [{ priceId, quantity: 1 }],
     });
