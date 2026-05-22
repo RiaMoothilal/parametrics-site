@@ -28,13 +28,12 @@ export default function PaddleCheckoutButton({
   }, []);
 
   function handleClick() {
-    console.log("[Paddle] opening checkout for priceId:", priceId);
-    console.log("[Paddle] instance:", paddleRef.current);
+    const successUrl = `${window.location.origin}/payment/success`;
+    console.log("[Paddle] priceId:", priceId);
+    console.log("[Paddle] successUrl:", successUrl);
     paddleRef.current?.Checkout.open({
       items: [{ priceId, quantity: 1 }],
-      settings: {
-        successUrl: `${window.location.origin}/payment/success`,
-      },
+      settings: { successUrl },
     });
   }
 
