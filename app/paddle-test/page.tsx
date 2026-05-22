@@ -1,33 +1,31 @@
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import PaddleCheckoutButton from "@/components/PaddleCheckoutButton";
+import PaddlePricingCard from "@/components/PaddlePricingCard";
 
 export const metadata: Metadata = {
   title: "Pricing (USD test)",
   robots: { index: false, follow: false },
 };
 
-const MONTHLY_PRICE_ID = "pri_01ks7rfeddvmmxssyaq83k81vb";
-const ANNUAL_PRICE_ID = "pri_01ks7rc00dqzh4yrhb82s2re83";
+const ENVIRONMENT = "sandbox" as const;
+const TOKEN = "test_d9f7824de2ef439b8ffda1eab86";
 
 const plans = [
   {
     id: "monthly",
     name: "Monthly",
-    price: "$5",
     period: "/ month",
-    trialNote: "60-day free trial, then $5/month",
-    priceId: MONTHLY_PRICE_ID,
+    trialNote: "60-day free trial, then billed monthly",
+    priceId: "pri_01ks7rfeddvmmxssyaq83k81vb",
     highlighted: false,
   },
   {
     id: "annual",
     name: "Annual",
-    price: "$48",
     period: "/ year",
-    trialNote: "60-day free trial, then $48/year",
-    priceId: ANNUAL_PRICE_ID,
+    trialNote: "60-day free trial, then billed annually",
+    priceId: "pri_01ks7rc00dqzh4yrhb82s2re83",
     highlighted: true,
     badge: "Best Value",
   },
@@ -115,103 +113,17 @@ export default function PaddleTestPage() {
             }}
           >
             {plans.map((plan) => (
-              <div
+              <PaddlePricingCard
                 key={plan.id}
-                style={{
-                  background: plan.highlighted
-                    ? "linear-gradient(135deg, rgba(3,169,244,0.1) 0%, rgba(2,136,209,0.06) 100%)"
-                    : "rgba(255,255,255,0.03)",
-                  border: plan.highlighted
-                    ? "1px solid rgba(3,169,244,0.35)"
-                    : "1px solid rgba(255,255,255,0.08)",
-                  borderRadius: "1rem",
-                  padding: "2rem",
-                  position: "relative",
-                }}
-              >
-                {"badge" in plan && plan.badge && (
-                  <div
-                    style={{
-                      position: "absolute",
-                      top: "-1px",
-                      left: "50%",
-                      transform: "translateX(-50%)",
-                      background: "#03a9f4",
-                      color: "#000",
-                      fontSize: "0.72rem",
-                      fontWeight: 700,
-                      padding: "0.25rem 0.85rem",
-                      borderRadius: "0 0 0.5rem 0.5rem",
-                      letterSpacing: "0.05em",
-                      textTransform: "uppercase",
-                      whiteSpace: "nowrap",
-                    }}
-                  >
-                    {plan.badge}
-                  </div>
-                )}
-
-                <h3
-                  style={{
-                    fontFamily: "'Space Grotesk', sans-serif",
-                    fontSize: "1.05rem",
-                    fontWeight: 600,
-                    color: "rgba(226,232,240,0.7)",
-                    margin: "0 0 0.75rem",
-                  }}
-                >
-                  {plan.name}
-                </h3>
-
-                <div
-                  style={{
-                    display: "flex",
-                    alignItems: "baseline",
-                    gap: "0.2rem",
-                    marginBottom: "0.3rem",
-                  }}
-                >
-                  <span
-                    style={{
-                      fontFamily: "'Space Grotesk', sans-serif",
-                      fontSize: "2.75rem",
-                      fontWeight: 800,
-                      color: "#fff",
-                      letterSpacing: "-0.03em",
-                    }}
-                  >
-                    {plan.price}
-                  </span>
-                  <span style={{ color: "rgba(226,232,240,0.45)", fontSize: "0.9rem" }}>
-                    {plan.period}
-                  </span>
-                </div>
-
-                <p
-                  style={{
-                    fontSize: "0.8rem",
-                    color: "rgba(226,232,240,0.55)",
-                    marginBottom: "1.75rem",
-                  }}
-                >
-                  {plan.trialNote}
-                </p>
-
-                <PaddleCheckoutButton
-                  priceId={plan.priceId}
-                  highlighted={plan.highlighted}
-                />
-                <p
-                  style={{
-                    textAlign: "center",
-                    fontSize: "0.78rem",
-                    color: "rgba(226,232,240,0.35)",
-                    margin: "0.6rem 0 0",
-                  }}
-                >
-                  No credit card required
-                </p>
-              </div>
+                priceId={plan.priceId}
+                name={plan.name}
+                period={plan.period}
+                trialNote={plan.trialNote}
+                highlighted={plan.highlighted}
+                badge={"badge" in plan ? plan.badge : undefined}
+                environment={ENVIRONMENT}
+                token={TOKEN}
+              />
             ))}
           </div>
 
