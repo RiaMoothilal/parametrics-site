@@ -46,7 +46,7 @@ export default function PaddlePricingCard({
           items: [{ priceId, quantity: 1 }],
         });
         const formatted =
-          preview.data.details.lineItems[0]?.formattedTotals.subtotal;
+          preview.data.details.lineItems[0]?.formattedTotals.total;
         if (formatted) setDisplayPrice(formatted);
       } catch {
         setDisplayPrice("—");
