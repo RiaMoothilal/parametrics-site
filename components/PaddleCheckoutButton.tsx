@@ -17,8 +17,8 @@ export default function PaddleCheckoutButton({
   useEffect(() => {
     if (!paddlePromise) {
       paddlePromise = initializePaddle({
-        environment: "sandbox",
-        token: "test_d9f7824de2ef439b8ffda1eab86",
+        environment: "production",
+        token: "live_868a0d1d84dd8b95b27e4cd1a8d",
       });
     }
     paddlePromise.then((p) => {

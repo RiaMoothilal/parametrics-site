@@ -8,8 +8,8 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-const MONTHLY_PRICE_ID = "pri_01ks8162hv9jfqsa2vsbx0eftk"; // simple test price
-const ANNUAL_PRICE_ID = "pri_01ks7rc00dqzh4yrhb82s2re83";
+const MONTHLY_PRICE_ID = "pri_01ks853a68x7s3k6rqnwv34j5w";
+const ANNUAL_PRICE_ID = "pri_01ks853a68x7s3k6rqnwv34j5w"; // same as monthly until annual production price is set up
 
 const plans = [
   {
@@ -50,7 +50,7 @@ export default function PaddleTestPage() {
             letterSpacing: "0.03em",
           }}
         >
-          SANDBOX TEST — no real charges · Paddle test environment · Built {new Date().toISOString().replace("T", " ").slice(0, 16)} UTC
+          PRODUCTION TEST — real charges apply · cancel immediately after · Built {new Date().toISOString().replace("T", " ").slice(0, 16)} UTC
         </div>
 
         {/* Header */}
