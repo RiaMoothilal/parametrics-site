@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-const MONTHLY_PRICE_ID = "pri_01ks7rfeddvmmxssyaq83k81vb";
+const MONTHLY_PRICE_ID = "pri_01ks8162hv9jfqsa2vsbx0eftk"; // simple test price
 const ANNUAL_PRICE_ID = "pri_01ks7rc00dqzh4yrhb82s2re83";
 
 const plans = [
