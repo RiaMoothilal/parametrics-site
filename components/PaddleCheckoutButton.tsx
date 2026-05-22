@@ -28,15 +28,9 @@ export default function PaddleCheckoutButton({
   }, []);
 
   function handleClick() {
-    const successUrl = "https://parametrics.app/payment/success";
     console.log("[Paddle] priceId:", priceId);
-    console.log("[Paddle] successUrl:", successUrl);
     paddleRef.current?.Checkout.open({
-      items: [{ priceId, quantity: 1 }],
-      settings: {
-        successUrl,
-        displayMode: "overlay",
-      },
+      items: [{ priceId }],
     });
   }
 
