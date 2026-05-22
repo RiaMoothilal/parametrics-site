@@ -50,7 +50,7 @@ export default function PaddleTestPage() {
             letterSpacing: "0.03em",
           }}
         >
-          SANDBOX TEST — no real charges · Paddle test environment
+          SANDBOX TEST — no real charges · Paddle test environment · Built {new Date().toISOString().replace("T", " ").slice(0, 16)} UTC
         </div>
 
         {/* Header */}
