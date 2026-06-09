@@ -75,9 +75,9 @@ const features = [
         <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
       </svg>
     ),
-    title: "Coaching Summary",
+    title: "Performance Analyst",
     description:
-      "Automated insights explaining how you can improve. Receive a readable summary highlighting your strongest moments and where the most gains are available.",
+      "A data interpretation for every analysis page — thermal efficiency, glide, safety, landing, and task. Each summary is grounded in your actual flight metrics, cited against the reference pilot or group.",
     color: "#03a9f4",
   },
 ];

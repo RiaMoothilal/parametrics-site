@@ -35,7 +35,7 @@ const steps = [
     number: "03",
     title: "Close the Gap",
     description:
-      "Get a coaching report that names the exact moments where the benchmark pilot gained altitude on you — and what to do differently next time. No guesswork, just data.",
+      "Get a Performance Analyst summary that names the exact moments where the benchmark pilot gained altitude on you — cited from the specific metrics in that session. No guesswork, just data.",
     icon: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#03a9f4" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 20h9" />

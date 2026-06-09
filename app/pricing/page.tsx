@@ -7,7 +7,7 @@ import FAQSection from "@/components/FAQSection";
 export const metadata: Metadata = {
   title: "Pricing",
   description:
-    "60 days of Pro access, free. Full AI coaching, missed thermal maps, glide performance, and more. No credit card required.",
+    "60 days of Pro access, free. Performance Analyst on every page, missed thermal maps, glide performance, and more. No credit card required.",
 };
 
 const APP_URL = "https://app.parametrics.app";
@@ -22,7 +22,7 @@ const FEATURES = [
   "Landing analysis (8 metrics, final turn altitude, Safe/Tight/Risky verdict)",
   "Landing approach map (2D satellite view)",
   "Glide performance overview (avg ratio, avg speed)",
-  "AI coaching on every analysis page (Safety, Glide, Landing, Overview, Comparison)",
+  "Performance Analyst on every analysis page (Safety, Glide, Landing, Overview, Comparison)",
   "Missed thermal opportunities — map showing exact locations, strength, and altitude",
   "3D landing approach visualization (interactive, rotatable)",
   "Glide performance map",
@@ -120,7 +120,7 @@ export default function PricingPage() {
               lineHeight: 1.6,
             }}
           >
-            Full Pro access from day one — AI coaching, missed thermal maps, glide performance, and more. No credit card required to start.
+            Full Pro access from day one — Performance Analyst on every page, missed thermal maps, glide performance, and more. No credit card required to start.
           </p>
           <p
             style={{
@@ -473,8 +473,8 @@ export default function PricingPage() {
                 },
                 {
                   icon: "✍️",
-                  title: "Coaching Summary",
-                  desc: "Automated improvement insights for each flight",
+                  title: "Performance Analyst",
+                  desc: "Data interpretation for every analysis page",
                 },
                 {
                   icon: "🏆",

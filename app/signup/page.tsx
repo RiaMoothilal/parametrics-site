@@ -347,7 +347,7 @@ export default function SignupPage() {
                 "20 reports per month",
                 "Flight Story Video",
                 "Multi-pilot comparison",
-                "AI coaching — all pages",
+                "Performance Analyst — all pages",
                 "6-month report history",
               ].map((item) => (
                 <div

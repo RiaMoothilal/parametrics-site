@@ -397,7 +397,7 @@ function ThermalPanel() {
   );
 }
 
-// ─── Coaching insight strip ────────────────────────────────────────────────────
+// ─── Performance insight strip ───────────────────────────────────────────────
 
 function CoachingInsight() {
   return (
@@ -441,7 +441,7 @@ function CoachingInsight() {
             marginBottom: "0.15rem",
           }}
         >
-          Coaching Insight
+          Performance Insight
         </div>
         <div
           style={{
@@ -450,7 +450,7 @@ function CoachingInsight() {
             lineHeight: 1.5,
           }}
         >
-          You left T3 (missed) early — only 41% of available climb used. Tighter core technique on weak thermals could add ~180m altitude.
+          Avg climb rate: 1.8 m/s vs the group's 2.6 m/s. Three unworked lift events detected — the strongest at 1.9 m/s.
         </div>
       </div>
     </div>
@@ -673,7 +673,7 @@ function ProductMockup() {
           {/* Altitude profile */}
           <AltitudeProfile />
 
-          {/* Coaching insight */}
+          {/* Performance insight */}
           <CoachingInsight />
         </div>
       </motion.div>
@@ -1106,7 +1106,7 @@ export default function Hero() {
                     <path d="M5 7l1.5 1.5L9 5" stroke="#03a9f4" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 }
-                label="Coaching Insights"
+                label="Performance Insights"
               />
             </motion.div>
           </motion.div>

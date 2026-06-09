@@ -105,7 +105,7 @@ export default function PrivacyPage() {
               collect IGC files and the flight data contained within them,
               including GPS track logs, altitude data, timestamps, and
               instrument metadata. This data is used solely to provide
-              analysis and coaching insights.
+              analysis and performance insights.
             </p>
             <br />
             <p>
@@ -119,7 +119,7 @@ export default function PrivacyPage() {
             <p>We use the information we collect to:</p>
             <ul style={{ paddingLeft: "1.5rem", marginTop: "0.5rem" }}>
               <li>Provide and improve our flight analysis service</li>
-              <li>Generate coaching summaries and insights</li>
+              <li>Generate performance analyses and insights</li>
               <li>Communicate with you about your account</li>
               <li>Respond to support requests</li>
               <li>Ensure the security and integrity of our systems</li>

@@ -96,11 +96,11 @@ export default function TermsPage() {
 
           <Section title="2. Description of Service">
             <p>
-              Parametrics is a web-based flight analysis and coaching tool
-              for paragliding pilots. The Service allows users to upload IGC
-              flight log files and receive automated analysis including
-              thermal performance metrics, glide efficiency data, missed
-              thermal detection, risk assessments, and coaching summaries.
+              Parametrics is a web-based flight analysis tool for paragliding
+              pilots. The Service allows users to upload IGC flight log files
+              and receive automated analysis including thermal performance
+              metrics, glide efficiency data, missed thermal detection, risk
+              assessments, and performance analyses.
             </p>
           </Section>
 
@@ -144,9 +144,9 @@ export default function TermsPage() {
           <Section title="6. Safety Disclaimer">
             <p>
               <strong style={{ color: "#f59e0b" }}>Important:</strong>{" "}
-              Parametrics provides data analysis and coaching insights for
-              educational purposes only. The analysis does not constitute
-              professional flight instruction or safety advice.
+              Parametrics provides data analysis for educational purposes only.
+              The analysis does not constitute professional flight instruction
+              or safety advice.
             </p>
             <br />
             <p>

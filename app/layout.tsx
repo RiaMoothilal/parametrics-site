@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     template: "%s | Parametrics",
   },
   description:
-    "Upload your IGC file and instantly analyze thermals, glide efficiency, missed climbs, and risk patterns. Coaching insights built for paraglider pilots.",
+    "Upload your IGC file and instantly analyze thermals, glide efficiency, missed climbs, and risk patterns. Performance analysis built for paraglider pilots.",
   keywords: [
     "paragliding",
     "flight analysis",

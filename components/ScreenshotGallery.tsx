@@ -18,8 +18,8 @@ const screens = [
     accent: "#a855f7",
   },
   {
-    label: "Coaching Summary",
-    sub: "Automated, readable insights on exactly where your biggest gains are hiding.",
+    label: "Performance Analyst",
+    sub: "Data interpretation for every analysis page — grounded in your actual flight metrics.",
     src: "/screenshots/coaching-summary.png",
     accent: "#10b981",
   },

@@ -31,7 +31,7 @@ export const allFAQs = [
   },
   {
     q: "Is it free to use right now?",
-    a: "Yes — the Free plan is available now with no credit card and no trial timer. Sign up, upload your IGC, and start analyzing immediately. Pro plans unlock full AI coaching across every analysis page, missed thermal maps, 3D landing visualization, and more.",
+    a: "Yes — the Free plan is available now with no credit card and no trial timer. Sign up, upload your IGC, and start analyzing immediately. Pro plans unlock the Performance Analyst on every analysis page, missed thermal maps, 3D landing visualization, and more.",
   },
   {
     q: "How long does analysis take?",

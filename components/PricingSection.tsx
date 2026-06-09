@@ -14,7 +14,7 @@ const FEATURES = [
   "Landing analysis (8 metrics, final turn altitude, Safe/Tight/Risky verdict)",
   "Landing approach map (2D satellite view)",
   "Glide performance overview (avg ratio, avg speed)",
-  "AI coaching on every analysis page (Safety, Glide, Landing, Overview, Comparison)",
+  "Performance Analyst on every analysis page (Safety, Glide, Landing, Overview, Comparison)",
   "Missed thermal opportunities — map showing exact locations, strength, and altitude",
   "3D landing approach visualization (interactive, rotatable)",
   "Glide performance map",
