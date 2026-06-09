@@ -31,7 +31,7 @@ const FEATURES = [
   "Benchmark pilot comparison (compare against any named pilot)",
   "Wind analysis map",
   "20 reports per month",
-  "180-day report history",
+  "Permanent report archive — access any past report, forever",
 ];
 
 function Check() {
