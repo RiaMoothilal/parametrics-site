@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 
 const APP_URL = "https://app.parametrics.app";
+const SIGN_IN_URL = "https://app.parametrics.app/oauth2/sign_in";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -117,7 +118,7 @@ export default function Navbar() {
             </Link>
           ))}
           <a
-            href={APP_URL}
+            href={SIGN_IN_URL}
             target="_blank"
             rel="noopener noreferrer"
             style={{
@@ -262,7 +263,7 @@ export default function Navbar() {
               Get Free Access
             </Link>
             <a
-              href={APP_URL}
+              href={SIGN_IN_URL}
               target="_blank"
               rel="noopener noreferrer"
               style={{

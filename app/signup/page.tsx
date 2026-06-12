@@ -6,7 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const SIGNUP_API = "https://app.parametrics.app/signup";
-const APP_URL = "https://app.parametrics.app";
+const SIGN_IN_URL = "https://app.parametrics.app/oauth2/sign_in";
 
 export default function SignupPage() {
   const router = useRouter();
@@ -381,7 +381,7 @@ export default function SignupPage() {
           >
             Already have access?{" "}
             <a
-              href={APP_URL}
+              href={SIGN_IN_URL}
               target="_blank"
               rel="noopener noreferrer"
               style={{ color: "#03a9f4", textDecoration: "none", fontWeight: 600 }}
