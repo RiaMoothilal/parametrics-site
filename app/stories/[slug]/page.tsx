@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
+import remarkGfm from "remark-gfm";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { getAllStories, getStory } from "@/lib/stories";
@@ -125,7 +126,7 @@ export default function StoryPage({ params }: Props) {
 
           {/* MDX content */}
           <div className="story-body">
-            <MDXRemote source={content} />
+            <MDXRemote source={content} options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }} />
           </div>
 
           {/* Bottom CTA */}

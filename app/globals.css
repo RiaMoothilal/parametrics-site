@@ -50,3 +50,27 @@ body {
   background-color: rgba(3, 169, 244, 0.3);
   color: #fff;
 }
+
+.story-body table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.9rem;
+}
+
+.story-body th,
+.story-body td {
+  padding: 0.6rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.story-body th {
+  color: #94a3b8;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.story-body tr:last-child td {
+  border-bottom: none;
+}
