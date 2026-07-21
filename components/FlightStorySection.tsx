@@ -188,7 +188,7 @@ export default function FlightStorySection() {
               boxShadow: "0 0 20px rgba(3,169,244,0.3)",
             }}
           >
-            Get Free Access
+            Analyze Your Last Flight — Free
           </Link>
         </motion.div>
       </div>

@@ -31,7 +31,7 @@ export const allFAQs = [
   },
   {
     q: "Is it free to use right now?",
-    a: "Yes — the Free plan is available now with no credit card and no trial timer. Sign up, upload your IGC, and start analyzing immediately. Pro plans unlock the Performance Analyst on every analysis page, missed thermal maps, 3D landing visualization, and more.",
+    a: "Yes — every account gets 60 days of Pro, free, no credit card required. That includes the Performance Analyst on every analysis page, missed thermal maps, 3D landing visualization, and more. After 60 days you can stay on the Free plan (also no credit card, no trial timer) or upgrade to keep Pro.",
   },
   {
     q: "How long does analysis take?",
@@ -139,8 +139,10 @@ function FAQItem({
 
 export default function FAQSection({
   preview = false,
+  showHeading = true,
 }: {
   preview?: boolean;
+  showHeading?: boolean;
 }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
@@ -149,38 +151,42 @@ export default function FAQSection({
   return (
     <section ref={ref} style={{ padding: "6rem 1.5rem" }}>
       <div style={{ maxWidth: "800px", margin: "0 auto" }}>
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={inView ? { opacity: 1 } : {}}
-          style={{
-            textAlign: "center",
-            color: "#03a9f4",
-            fontSize: "0.82rem",
-            fontWeight: 600,
-            textTransform: "uppercase",
-            letterSpacing: "0.1em",
-            marginBottom: "0.75rem",
-          }}
-        >
-          FAQ
-        </motion.p>
+        {showHeading && (
+          <>
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={inView ? { opacity: 1 } : {}}
+              style={{
+                textAlign: "center",
+                color: "#03a9f4",
+                fontSize: "0.82rem",
+                fontWeight: 600,
+                textTransform: "uppercase",
+                letterSpacing: "0.1em",
+                marginBottom: "0.75rem",
+              }}
+            >
+              FAQ
+            </motion.p>
 
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          style={{
-            fontFamily: "'Space Grotesk', sans-serif",
-            fontSize: "clamp(1.8rem, 4vw, 2.8rem)",
-            fontWeight: 700,
-            textAlign: "center",
-            color: "#fff",
-            letterSpacing: "-0.025em",
-            marginBottom: "3rem",
-          }}
-        >
-          Frequently Asked Questions
-        </motion.h2>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              style={{
+                fontFamily: "'Space Grotesk', sans-serif",
+                fontSize: "clamp(1.8rem, 4vw, 2.8rem)",
+                fontWeight: 700,
+                textAlign: "center",
+                color: "#fff",
+                letterSpacing: "-0.025em",
+                marginBottom: "3rem",
+              }}
+            >
+              Frequently Asked Questions
+            </motion.h2>
+          </>
+        )}
 
         <div
           style={{ display: "flex", flexDirection: "column", gap: "0.6rem" }}

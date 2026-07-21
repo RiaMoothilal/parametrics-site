@@ -1009,7 +1009,7 @@ export default function Hero() {
                   letterSpacing: "-0.01em",
                 }}
               >
-                Get Free Access
+                Analyze Your Last Flight — Free
                 <svg
                   width="14"
                   height="14"

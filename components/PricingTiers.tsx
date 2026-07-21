@@ -45,7 +45,7 @@ function Check() {
 }
 
 export default function PricingTiers({ preview = false }: { preview?: boolean }) {
-  const [period, setPeriod] = useState<BillingPeriod>("monthly");
+  const [period, setPeriod] = useState<BillingPeriod>("annual");
   const [prices, setPrices] = useState<Record<string, PriceInfo>>({});
   const paddleRef = useRef<Paddle | undefined>();
 
@@ -206,6 +206,18 @@ export default function PricingTiers({ preview = false }: { preview?: boolean })
                 {tier.name}
               </h3>
 
+              {tier.startsTrial && (
+                <p
+                  style={{
+                    fontSize: "0.78rem",
+                    color: "#10b981",
+                    fontWeight: 700,
+                    margin: "0 0 0.35rem",
+                  }}
+                >
+                  60 days free, then
+                </p>
+              )}
               <div
                 style={{
                   display: "flex",
@@ -305,7 +317,7 @@ export default function PricingTiers({ preview = false }: { preview?: boolean })
                 ))}
               </ul>
 
-              {isFree ? (
+              {isFree || tier.startsTrial ? (
                 <Link
                   href={tier.ctaHref ?? "/signup"}
                   style={{
@@ -316,9 +328,9 @@ export default function PricingTiers({ preview = false }: { preview?: boolean })
                     fontSize: "0.95rem",
                     fontWeight: 700,
                     textDecoration: "none",
-                    background: "rgba(255,255,255,0.07)",
-                    color: "rgba(226,232,240,0.8)",
-                    border: "1px solid rgba(255,255,255,0.12)",
+                    border: tier.recommended ? "none" : "1px solid rgba(255,255,255,0.12)",
+                    background: tier.recommended ? "#03a9f4" : "rgba(255,255,255,0.07)",
+                    color: tier.recommended ? "#fff" : "rgba(226,232,240,0.8)",
                   }}
                 >
                   {tier.cta}
@@ -353,6 +365,18 @@ export default function PricingTiers({ preview = false }: { preview?: boolean })
                 >
                   {priceId ? tier.cta : "Coming soon"}
                 </button>
+              )}
+              {tier.startsTrial && (
+                <p
+                  style={{
+                    textAlign: "center",
+                    fontSize: "0.76rem",
+                    color: "rgba(226,232,240,0.4)",
+                    margin: "0.6rem 0 0",
+                  }}
+                >
+                  No credit card required
+                </p>
               )}
             </div>
           );

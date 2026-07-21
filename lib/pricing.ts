@@ -7,6 +7,11 @@ export interface PricingTier {
   recommended?: boolean;
   cta: string;
   ctaHref?: string;
+  // True for tiers where the CTA should start the 60-day free trial
+  // (via /signup) instead of going straight to Paddle checkout. Only Pro
+  // gets a trial today — /signup's beta_active grant always resolves to
+  // "pro" tier (see ParametricsApp/R/entitlements.R), never proplus.
+  startsTrial?: boolean;
   monthlyPriceId?: string;
   annualPriceId?: string;
   limits: string[];
@@ -53,7 +58,8 @@ export const PRICING_TIERS: PricingTier[] = [
     name: "Pro",
     tagline: "For pilots who want to improve",
     recommended: true,
-    cta: "Start with Pro",
+    cta: "Try Pro free for 60 days",
+    startsTrial: true,
     monthlyPriceId: PRO_MONTHLY_PRICE_ID,
     annualPriceId: PRO_ANNUAL_PRICE_ID,
     limits: [

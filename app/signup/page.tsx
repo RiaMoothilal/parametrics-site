@@ -399,7 +399,7 @@ export default function SignupPage() {
                 "Flight Story Video",
                 "Multi-pilot comparison",
                 "Performance Analyst — all pages",
-                "6-month report history",
+                "Permanent report archive",
               ].map((item) => (
                 <div
                   key={item}

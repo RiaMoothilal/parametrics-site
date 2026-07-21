@@ -89,7 +89,7 @@ export default function Navbar() {
           className="hidden-mobile"
         >
           {[
-            { href: "/stories", label: "Stories" },
+            { href: "/stories", label: "Learn" },
             { href: "/pricing", label: "Pricing" },
             { href: "/faq", label: "FAQ" },
           ].map((item) => (
@@ -154,7 +154,7 @@ export default function Navbar() {
               (e.currentTarget as HTMLElement).style.boxShadow = "none";
             }}
           >
-            Get Free Access
+            Start Free
           </Link>
         </nav>
 
@@ -220,7 +220,7 @@ export default function Navbar() {
             }}
           >
             {[
-              { href: "/stories", label: "Stories" },
+              { href: "/stories", label: "Learn" },
               { href: "/pricing", label: "Pricing" },
               { href: "/faq", label: "FAQ" },
               { href: "/privacy", label: "Privacy" },
@@ -255,7 +255,7 @@ export default function Navbar() {
                 marginTop: "0.5rem",
               }}
             >
-              Get Free Access
+              Start Free
             </Link>
             <Link
               href="/signin"

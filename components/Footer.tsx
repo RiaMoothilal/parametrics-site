@@ -208,7 +208,7 @@ export default function Footer() {
                 textDecoration: "none",
               }}
             >
-              Get Free Access →
+              Start Free →
             </Link>
             <p style={{ margin: "0.6rem 0 0", fontSize: "0.8rem", color: "rgba(226,232,240,0.35)" }}>
               Already have access?{" "}

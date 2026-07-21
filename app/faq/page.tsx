@@ -60,7 +60,7 @@ export default function FAQPage() {
           </p>
         </div>
 
-        <FAQSection />
+        <FAQSection showHeading={false} />
       </main>
       <Footer />
     </>
