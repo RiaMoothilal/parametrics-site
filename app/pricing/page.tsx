@@ -1,76 +1,16 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FAQSection from "@/components/FAQSection";
+import PricingTiers from "@/components/PricingTiers";
 
 export const metadata: Metadata = {
   title: "Pricing",
   description:
-    "60 days of Pro access, free. Performance Analyst on every page, missed thermal maps, glide performance, and more. No credit card required.",
+    "Free, Pro, and Pro+ plans for paragliding flight analysis. Performance Analyst on every page, missed thermal maps, glide performance, and more. No credit card required to start.",
 };
 
 const APP_URL = "https://app.parametrics.app";
-
-const FEATURES = [
-  "Upload and process IGC flight files",
-  "Full flight summary (duration, altitude, thermals, wind, landing finals)",
-  "Altitude timeline and flight phase breakdown",
-  "Interactive flight map",
-  "Thermal performance overview (avg climb rate, centering score, commit delay)",
-  "Safety overview (time below 100m AGL, low save count)",
-  "Landing analysis (8 metrics, final turn altitude, Safe/Tight/Risky verdict)",
-  "Landing approach map (2D satellite view)",
-  "Glide performance overview (avg ratio, avg speed)",
-  "Performance Analyst on every analysis page (Safety, Glide, Landing, Overview, Comparison)",
-  "Missed thermal opportunities — map showing exact locations, strength, and altitude",
-  "3D landing approach visualization (interactive, rotatable)",
-  "Glide performance map",
-  "Multi-pilot comparison (up to 10 pilots per report)",
-  "In-Depth and Full Analytics modes",
-  "Benchmark pilot comparison (compare against any named pilot)",
-  "Wind analysis map",
-  "20 reports per month",
-  "Permanent report archive — access any past report, forever",
-];
-
-function Check() {
-  return (
-    <svg
-      width="15"
-      height="15"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="#03a9f4"
-      strokeWidth="2.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      style={{ flexShrink: 0, marginTop: "2px" }}
-    >
-      <polyline points="20 6 9 17 4 12" />
-    </svg>
-  );
-}
-
-const plans = [
-  {
-    id: "monthly",
-    name: "Monthly",
-    price: "R60",
-    period: "/ month",
-    trialNote: "60-day free trial, then R60/month",
-    highlighted: false,
-  },
-  {
-    id: "annual",
-    name: "Annual",
-    price: "R600",
-    period: "/ year",
-    trialNote: "60-day free trial, then R600/year",
-    highlighted: true,
-    badge: "Best Value",
-  },
-];
 
 export default function PricingPage() {
   return (
@@ -109,7 +49,7 @@ export default function PricingPage() {
               marginBottom: "0.75rem",
             }}
           >
-            Try Pro Free for 60 Days
+            Simple, honest pricing
           </h1>
           <p
             style={{
@@ -120,7 +60,7 @@ export default function PricingPage() {
               lineHeight: 1.6,
             }}
           >
-            Full Pro access from day one — Performance Analyst on every page, missed thermal maps, glide performance, and more. No credit card required to start.
+            Free forever for pilots getting started. Upgrade to Pro or Pro+ for Performance Analyst coaching, missed thermal maps, benchmarking, and more.
           </p>
           <p
             style={{
@@ -142,159 +82,7 @@ export default function PricingPage() {
             borderBottom: "1px solid rgba(255,255,255,0.04)",
           }}
         >
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-              gap: "1.25rem",
-              maxWidth: "700px",
-              margin: "0 auto",
-            }}
-          >
-            {plans.map((plan) => (
-              <div
-                key={plan.id}
-                style={{
-                  background: plan.highlighted
-                    ? "linear-gradient(135deg, rgba(3,169,244,0.1) 0%, rgba(2,136,209,0.06) 100%)"
-                    : "rgba(255,255,255,0.03)",
-                  border: plan.highlighted
-                    ? "1px solid rgba(3,169,244,0.35)"
-                    : "1px solid rgba(255,255,255,0.08)",
-                  borderRadius: "1rem",
-                  padding: "2rem",
-                  position: "relative",
-                }}
-              >
-                {"badge" in plan && plan.badge && (
-                  <div
-                    style={{
-                      position: "absolute",
-                      top: "-1px",
-                      left: "50%",
-                      transform: "translateX(-50%)",
-                      background: "#03a9f4",
-                      color: "#000",
-                      fontSize: "0.72rem",
-                      fontWeight: 700,
-                      padding: "0.25rem 0.85rem",
-                      borderRadius: "0 0 0.5rem 0.5rem",
-                      letterSpacing: "0.05em",
-                      textTransform: "uppercase",
-                      whiteSpace: "nowrap",
-                    }}
-                  >
-                    {plan.badge}
-                  </div>
-                )}
-
-                {/* Plan name */}
-                <h3
-                  style={{
-                    fontFamily: "'Space Grotesk', sans-serif",
-                    fontSize: "1.05rem",
-                    fontWeight: 600,
-                    color: "rgba(226,232,240,0.7)",
-                    margin: "0 0 0.75rem",
-                  }}
-                >
-                  {plan.name}
-                </h3>
-
-                {/* Price */}
-                <div
-                  style={{
-                    display: "flex",
-                    alignItems: "baseline",
-                    gap: "0.2rem",
-                    marginBottom: "0.3rem",
-                  }}
-                >
-                  <span
-                    style={{
-                      fontFamily: "'Space Grotesk', sans-serif",
-                      fontSize: "2.75rem",
-                      fontWeight: 800,
-                      color: "#fff",
-                      letterSpacing: "-0.03em",
-                    }}
-                  >
-                    {plan.price}
-                  </span>
-                  <span style={{ color: "rgba(226,232,240,0.45)", fontSize: "0.9rem" }}>
-                    {plan.period}
-                  </span>
-                </div>
-
-                <p
-                  style={{
-                    fontSize: "0.8rem",
-                    color: "rgba(226,232,240,0.55)",
-                    marginBottom: "1.75rem",
-                  }}
-                >
-                  {plan.trialNote}
-                </p>
-
-                {/* Features */}
-                <ul
-                  style={{
-                    listStyle: "none",
-                    padding: 0,
-                    margin: "0 0 2rem",
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "0.65rem",
-                  }}
-                >
-                  {FEATURES.map((f) => (
-                    <li
-                      key={f}
-                      style={{
-                        display: "flex",
-                        alignItems: "flex-start",
-                        gap: "0.6rem",
-                        color: "rgba(226,232,240,0.75)",
-                        fontSize: "0.88rem",
-                      }}
-                    >
-                      <Check />
-                      {f}
-                    </li>
-                  ))}
-                </ul>
-
-                {/* CTA */}
-                <Link
-                  href="/signup"
-                  style={{
-                    display: "block",
-                    textAlign: "center",
-                    padding: "0.85rem",
-                    borderRadius: "0.5rem",
-                    fontSize: "0.95rem",
-                    fontWeight: 700,
-                    textDecoration: "none",
-                    background: plan.highlighted ? "#03a9f4" : "rgba(255,255,255,0.07)",
-                    color: plan.highlighted ? "#fff" : "rgba(226,232,240,0.8)",
-                    border: plan.highlighted ? "none" : "1px solid rgba(255,255,255,0.12)",
-                  }}
-                >
-                  Start free trial
-                </Link>
-                <p
-                  style={{
-                    textAlign: "center",
-                    fontSize: "0.78rem",
-                    color: "rgba(226,232,240,0.35)",
-                    margin: "0.6rem 0 0",
-                  }}
-                >
-                  No credit card required
-                </p>
-              </div>
-            ))}
-          </div>
+          <PricingTiers />
 
           <p
             style={{
@@ -304,7 +92,7 @@ export default function PricingPage() {
               marginTop: "1.5rem",
             }}
           >
-            Cancel anytime · No long-term contracts · Charged in ZAR
+            Cancel anytime · No long-term contracts
           </p>
         </section>
 
@@ -344,8 +132,8 @@ export default function PricingPage() {
               {[
                 {
                   step: "1",
-                  title: "Start your free trial",
-                  desc: "Enter your email on the sign-up page. Your 60-day Pro access is created immediately.",
+                  title: "Create your free account",
+                  desc: "Enter your email on the sign-up page. Free tier access is created immediately — upgrade to Pro or Pro+ any time.",
                   color: "#03a9f4",
                 },
                 {

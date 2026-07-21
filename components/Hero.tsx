@@ -1119,7 +1119,17 @@ export default function Hero() {
       </div>
 
       {/* ── Global styles + responsive ── */}
-      <style>{`
+      {/*
+        dangerouslySetInnerHTML (not a JSX text child) is required here: <style> is an
+        HTML raw-text element, so browsers never decode entities inside it. A plain JSX
+        text child gets HTML-escaped by React's server renderer (> becomes &gt;), which
+        the browser then keeps literally — breaking the `.hero-copy > div:last-child`
+        rule and causing a server/client hydration text mismatch. dangerouslySetInnerHTML
+        writes the raw string untouched, matching what the browser parses.
+      */}
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
         @keyframes heroPulse {
           0%, 100% { opacity: 1; }
           50%       { opacity: 0.4; }
@@ -1171,7 +1181,9 @@ export default function Hero() {
             gap: 2.5rem !important;
           }
         }
-      `}</style>
+      `,
+        }}
+      />
     </section>
   );
 }

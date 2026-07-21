@@ -157,7 +157,7 @@ export default function SignupPage() {
               margin: "0 0 2.25rem",
             }}
           >
-            Full Pro access, no credit card. After 60 days, stay on free or keep Pro for R170/month.
+            Full Pro access, no credit card. After 60 days, stay on Free or upgrade to Pro or Pro+ any time.
           </p>
 
           {/* Form card */}

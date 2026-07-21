@@ -22,7 +22,7 @@ export default function HomePage() {
         <ScreenshotGallery />
         <FlightStorySection />
         <StoriesTeaser />
-        <PricingSection preview />
+        <PricingSection />
         <FAQSection preview />
       </main>
       <Footer />
