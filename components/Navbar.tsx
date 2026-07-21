@@ -4,9 +4,6 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 
-const APP_URL = "https://app.parametrics.app";
-const SIGN_IN_URL = "https://app.parametrics.app/oauth2/sign_in";
-
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -117,10 +114,8 @@ export default function Navbar() {
               {item.label}
             </Link>
           ))}
-          <a
-            href={SIGN_IN_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/signin"
             style={{
               color: "rgba(226,232,240,0.6)",
               textDecoration: "none",
@@ -136,7 +131,7 @@ export default function Navbar() {
             }
           >
             Sign In
-          </a>
+          </Link>
           <Link
             href="/signup"
             style={{
@@ -262,10 +257,9 @@ export default function Navbar() {
             >
               Get Free Access
             </Link>
-            <a
-              href={SIGN_IN_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/signin"
+              onClick={() => setMenuOpen(false)}
               style={{
                 color: "rgba(226,232,240,0.55)",
                 textDecoration: "none",
@@ -275,7 +269,7 @@ export default function Navbar() {
               }}
             >
               Already have access? Sign In →
-            </a>
+            </Link>
           </motion.div>
         )}
       </AnimatePresence>

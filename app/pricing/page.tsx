@@ -10,8 +10,6 @@ export const metadata: Metadata = {
     "Free, Pro, and Pro+ plans for paragliding flight analysis. Performance Analyst on every page, missed thermal maps, glide performance, and more. No credit card required to start.",
 };
 
-const APP_URL = "https://app.parametrics.app";
-
 export default function PricingPage() {
   return (
     <>
@@ -119,7 +117,7 @@ export default function PricingPage() {
                 marginBottom: "2rem",
               }}
             >
-              A simple two-step process after you sign up.
+              A simple two-step process.
             </p>
 
             <div
@@ -132,31 +130,12 @@ export default function PricingPage() {
               {[
                 {
                   step: "1",
-                  title: "Create your free account",
-                  desc: "Enter your email on the sign-up page. Free tier access is created immediately — upgrade to Pro or Pro+ any time.",
+                  title: "Sign up with Google or email",
+                  desc: "Continue with Google, or get a one-time sign-in link by email — no separate account elsewhere. Free tier access is created immediately; upgrade to Pro or Pro+ any time.",
                   color: "#03a9f4",
                 },
                 {
                   step: "2",
-                  title: "Sign in with Google",
-                  desc: (
-                    <>
-                      Go to{" "}
-                      <a
-                        href={APP_URL}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        style={{ color: "#03a9f4", textDecoration: "none" }}
-                      >
-                        app.parametrics.app
-                      </a>{" "}
-                      and sign in with the <strong>same email</strong> you registered with.
-                    </>
-                  ),
-                  color: "#10b981",
-                },
-                {
-                  step: "3",
                   title: "Upload & analyse",
                   desc: "Upload any IGC file from XCTrack, Oudie, FlySkyHy, or any instrument. Your analysis is ready in seconds.",
                   color: "#a855f7",

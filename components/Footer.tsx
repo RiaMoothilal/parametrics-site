@@ -2,8 +2,6 @@
 
 import Link from "next/link";
 
-const APP_URL = "https://app.parametrics.app";
-
 export default function Footer() {
   const year = new Date().getFullYear();
 
@@ -94,50 +92,24 @@ export default function Footer() {
                 { href: "/pricing", label: "Pricing" },
                 { href: "/faq", label: "FAQ" },
                 {
-                  href: APP_URL,
+                  href: "/signin",
                   label: "Sign In to App",
-                  external: true,
                 },
-              ].map((item) =>
-                item.external ? (
-                  <li key={item.label} style={{ marginBottom: "0.6rem" }}>
-                    <a
-                      href={item.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={{
-                        color: "rgba(226,232,240,0.55)",
-                        textDecoration: "none",
-                        fontSize: "0.9rem",
-                        transition: "color 0.2s",
-                      }}
-                      onMouseEnter={(e) =>
-                        ((e.target as HTMLElement).style.color = "#03a9f4")
-                      }
-                      onMouseLeave={(e) =>
-                        ((e.target as HTMLElement).style.color =
-                          "rgba(226,232,240,0.55)")
-                      }
-                    >
-                      {item.label}
-                    </a>
-                  </li>
-                ) : (
-                  <li key={item.label} style={{ marginBottom: "0.6rem" }}>
-                    <Link
-                      href={item.href}
-                      style={{
-                        color: "rgba(226,232,240,0.55)",
-                        textDecoration: "none",
-                        fontSize: "0.9rem",
-                        transition: "color 0.2s",
-                      }}
-                    >
-                      {item.label}
-                    </Link>
-                  </li>
-                )
-              )}
+              ].map((item) => (
+                <li key={item.label} style={{ marginBottom: "0.6rem" }}>
+                  <Link
+                    href={item.href}
+                    style={{
+                      color: "rgba(226,232,240,0.55)",
+                      textDecoration: "none",
+                      fontSize: "0.9rem",
+                      transition: "color 0.2s",
+                    }}
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -240,14 +212,12 @@ export default function Footer() {
             </Link>
             <p style={{ margin: "0.6rem 0 0", fontSize: "0.8rem", color: "rgba(226,232,240,0.35)" }}>
               Already have access?{" "}
-              <a
-                href={APP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="/signin"
                 style={{ color: "rgba(226,232,240,0.5)", textDecoration: "none" }}
               >
                 Sign in →
-              </a>
+              </Link>
             </p>
           </div>
         </div>

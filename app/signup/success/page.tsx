@@ -1,6 +1,6 @@
 "use client";
 
-import { Suspense } from "react";
+import { Suspense, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
@@ -8,9 +8,25 @@ import Footer from "@/components/Footer";
 
 const APP_URL = "https://app.parametrics.app";
 
+const MAGIC_REQUEST_API = "https://app.parametrics.app/auth/magic/request";
+
 function SignupSuccessContent() {
   const params = useSearchParams();
   const email = params.get("email") || "your email";
+  const method = params.get("method") === "magic" ? "magic" : "google";
+  const [resent, setResent] = useState(false);
+
+  const handleResend = async () => {
+    if (email === "your email") return;
+    setResent(true);
+    try {
+      await fetch(MAGIC_REQUEST_API, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+    } catch {}
+  };
 
   return (
     <main
@@ -110,8 +126,17 @@ function SignupSuccessContent() {
             margin: "0 0 2rem",
           }}
         >
-          60 days of Pro access, on us. Sign in with{" "}
-          <strong style={{ color: "#fff" }}>{email}</strong> to get started.
+          {method === "magic" ? (
+            <>
+              60 days of Pro access, on us. Check{" "}
+              <strong style={{ color: "#fff" }}>{email}</strong> for your sign-in link.
+            </>
+          ) : (
+            <>
+              60 days of Pro access, on us. Sign in with{" "}
+              <strong style={{ color: "#fff" }}>{email}</strong> to get started.
+            </>
+          )}
         </p>
 
         {/* Steps card */}
@@ -138,44 +163,58 @@ function SignupSuccessContent() {
             What happens next
           </p>
 
-          {[
-            {
-              step: "1",
-              title: "Sign in with Google",
-              body: (
-                <>
-                  Go to{" "}
-                  <a
-                    href={APP_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{ color: "#03a9f4", textDecoration: "none" }}
-                  >
-                    app.parametrics.app
-                  </a>{" "}
-                  and click <strong style={{ color: "rgba(226,232,240,0.85)" }}>Sign in with Google</strong>.
-                </>
-              ),
-              color: "#03a9f4",
-            },
-            {
-              step: "2",
-              title: "Use your Google account",
-              body: (
-                <>
-                  When prompted, select the Google account for{" "}
-                  <strong style={{ color: "#10b981" }}>{email}</strong>.
-                </>
-              ),
-              color: "#10b981",
-            },
-            {
-              step: "3",
-              title: "Upload your first IGC file",
-              body: "Inside the app, upload any IGC flight file and your analysis will be ready in seconds.",
-              color: "#a855f7",
-            },
-          ].map((item, i) => (
+          {(method === "magic"
+            ? [
+                {
+                  step: "1",
+                  title: "Check your inbox",
+                  body: (
+                    <>
+                      We&rsquo;ve sent a sign-in link to{" "}
+                      <strong style={{ color: "#10b981" }}>{email}</strong>. It expires in 15 minutes.
+                    </>
+                  ),
+                  color: "#03a9f4",
+                },
+                {
+                  step: "2",
+                  title: "Click the link",
+                  body: "It signs you in directly — no password, no separate account to set up.",
+                  color: "#10b981",
+                },
+                {
+                  step: "3",
+                  title: "Upload your first IGC file",
+                  body: "Inside the app, upload any IGC flight file and your analysis will be ready in seconds.",
+                  color: "#a855f7",
+                },
+              ]
+            : [
+                {
+                  step: "1",
+                  title: "Continue with Google",
+                  body: (
+                    <>
+                      You&rsquo;ll be taken straight to Google, pre-filled for{" "}
+                      <strong style={{ color: "#10b981" }}>{email}</strong>.
+                    </>
+                  ),
+                  color: "#03a9f4",
+                },
+                {
+                  step: "2",
+                  title: "Confirm your account",
+                  body: "Approve the sign-in and you'll land back in the app automatically.",
+                  color: "#10b981",
+                },
+                {
+                  step: "3",
+                  title: "Upload your first IGC file",
+                  body: "Inside the app, upload any IGC flight file and your analysis will be ready in seconds.",
+                  color: "#a855f7",
+                },
+              ]
+          ).map((item, i) => (
             <div
               key={i}
               style={{
@@ -230,37 +269,61 @@ function SignupSuccessContent() {
         </div>
 
         {/* CTA */}
-        <a
-          href={APP_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{
-            display: "inline-flex",
-            alignItems: "center",
-            gap: "0.5rem",
-            background: "#10b981",
-            color: "#fff",
-            padding: "0.9rem 2rem",
-            borderRadius: "0.6rem",
-            fontSize: "1rem",
-            fontWeight: 700,
-            textDecoration: "none",
-            boxShadow: "0 0 28px rgba(16,185,129,0.35)",
-            letterSpacing: "-0.01em",
-            transition: "transform 0.15s ease, box-shadow 0.15s ease",
-            marginTop: "2rem",
-          }}
-          onMouseEnter={(e) => {
-            (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(-2px)";
-            (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 0 42px rgba(16,185,129,0.52)";
-          }}
-          onMouseLeave={(e) => {
-            (e.currentTarget as HTMLAnchorElement).style.transform = "none";
-            (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 0 28px rgba(16,185,129,0.35)";
-          }}
-        >
-          Continue to App →
-        </a>
+        {method === "magic" ? (
+          <button
+            onClick={handleResend}
+            disabled={resent}
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "0.5rem",
+              background: resent ? "rgba(16,185,129,0.15)" : "rgba(255,255,255,0.06)",
+              color: resent ? "#10b981" : "#fff",
+              border: `1px solid ${resent ? "rgba(16,185,129,0.35)" : "rgba(255,255,255,0.15)"}`,
+              padding: "0.85rem 1.75rem",
+              borderRadius: "0.6rem",
+              fontSize: "0.95rem",
+              fontWeight: 700,
+              cursor: resent ? "default" : "pointer",
+              letterSpacing: "-0.01em",
+              marginTop: "2rem",
+            }}
+          >
+            {resent ? "Link resent ✓" : "Didn't get it? Resend link"}
+          </button>
+        ) : (
+          <a
+            href={APP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "0.5rem",
+              background: "#10b981",
+              color: "#fff",
+              padding: "0.9rem 2rem",
+              borderRadius: "0.6rem",
+              fontSize: "1rem",
+              fontWeight: 700,
+              textDecoration: "none",
+              boxShadow: "0 0 28px rgba(16,185,129,0.35)",
+              letterSpacing: "-0.01em",
+              transition: "transform 0.15s ease, box-shadow 0.15s ease",
+              marginTop: "2rem",
+            }}
+            onMouseEnter={(e) => {
+              (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(-2px)";
+              (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 0 42px rgba(16,185,129,0.52)";
+            }}
+            onMouseLeave={(e) => {
+              (e.currentTarget as HTMLAnchorElement).style.transform = "none";
+              (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 0 28px rgba(16,185,129,0.35)";
+            }}
+          >
+            Continue to App →
+          </a>
+        )}
 
         <p style={{ marginTop: "1.25rem", color: "rgba(226,232,240,0.35)", fontSize: "0.8rem" }}>
           <Link href="/" style={{ color: "rgba(226,232,240,0.45)", textDecoration: "none" }}>
