@@ -26,6 +26,25 @@ interface PriceInfo {
   rawSubtotal: number;
 }
 
+// Derives a monthly-equivalent from Paddle's own formatted annual total
+// (e.g. "R500.00" -> "R41.67") by parsing the number back out of the
+// string and dividing by 12, rather than computing from the raw minor-unit
+// totals field. Confirmed live: Paddle's totals.total is in minor units
+// (cents) -- "50000" for R500.00 -- and minor-unit exponents vary by
+// currency (most are /100, but not all, e.g. JPY is /1). Parsing Paddle's
+// already-correctly-scaled, already-localized formatted string sidesteps
+// that entirely, and also keeps the exact same symbol/spacing Paddle chose
+// (Intl.NumberFormat without a real locale hint renders ZAR as the ISO
+// code "ZAR 41.67", which wouldn't match "R500.00" on the same card).
+function formatMonthlyEquivalent(annualFormatted: string): string {
+  const match = annualFormatted.match(/^(\D*)([\d,.\s]+)(\D*)$/);
+  if (!match) return annualFormatted;
+  const [, prefix, numPart, suffix] = match;
+  const value = parseFloat(numPart.replace(/,/g, ""));
+  if (Number.isNaN(value)) return annualFormatted;
+  return `${prefix}${(value / 12).toFixed(2)}${suffix}`;
+}
+
 function Check() {
   return (
     <svg
@@ -88,7 +107,7 @@ export default function PricingTiers({ preview = false }: { preview?: boolean })
     const annual = prices[tier.annualPriceId];
     if (!monthly || !annual || monthly.rawSubtotal <= 0) return null;
     const pct = Math.round((1 - annual.rawSubtotal / 12 / monthly.rawSubtotal) * 100);
-    return pct > 0 ? `Save ${pct}%` : null;
+    return pct > 0 ? `-${pct}%` : null;
   }
 
   return (
@@ -147,8 +166,21 @@ export default function PricingTiers({ preview = false }: { preview?: boolean })
               ? tier.monthlyPriceId
               : tier.annualPriceId;
           const priceInfo = priceId ? prices[priceId] : undefined;
-          const priceLabel = isFree ? "Free" : !priceId ? "Coming soon" : priceInfo ? priceInfo.formatted : "…";
-          const periodLabel = period === "monthly" ? "/ month" : "/ year";
+          // Always shown as a monthly-equivalent, even when annual billing is
+          // selected (annual total / 12) -- a big annual lump sum reads as
+          // more expensive than the equivalent monthly rate even when it's
+          // the better deal. The actual annual charge is still disclosed
+          // below, just not as the headline number.
+          const priceLabel = isFree
+            ? "Free"
+            : !priceId
+              ? "Coming soon"
+              : !priceInfo
+                ? "…"
+                : period === "annual"
+                  ? formatMonthlyEquivalent(priceInfo.formatted)
+                  : priceInfo.formatted;
+          const periodLabel = "/ mo";
           const savings = !isFree && period === "annual" ? annualSavingsLabel(tier) : null;
           const featureList = preview ? tier.features.slice(0, 4) : tier.features;
 
@@ -201,9 +233,28 @@ export default function PricingTiers({ preview = false }: { preview?: boolean })
                   fontWeight: 700,
                   color: "#fff",
                   margin: "0 0 1rem",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "0.5rem",
                 }}
               >
                 {tier.name}
+                {savings && (
+                  <span
+                    style={{
+                      fontFamily: "inherit",
+                      fontSize: "0.72rem",
+                      fontWeight: 700,
+                      color: "#10b981",
+                      background: "rgba(16,185,129,0.12)",
+                      border: "1px solid rgba(16,185,129,0.3)",
+                      borderRadius: "999px",
+                      padding: "0.1rem 0.55rem",
+                    }}
+                  >
+                    {savings}
+                  </span>
+                )}
               </h3>
 
               {tier.startsTrial && (
@@ -247,9 +298,9 @@ export default function PricingTiers({ preview = false }: { preview?: boolean })
               </div>
 
               <div style={{ marginBottom: "1rem", minHeight: "1.2rem" }}>
-                {savings && (
-                  <p style={{ fontSize: "0.78rem", color: "#10b981", fontWeight: 600, margin: 0 }}>
-                    {savings} vs monthly
+                {!isFree && period === "annual" && priceInfo && (
+                  <p style={{ fontSize: "0.78rem", color: "rgba(226,232,240,0.4)", margin: 0 }}>
+                    {priceInfo.formatted}/year, billed annually
                   </p>
                 )}
               </div>
